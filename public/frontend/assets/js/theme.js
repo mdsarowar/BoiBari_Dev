@@ -194,7 +194,7 @@ $('#topseler-slider').slick({
     slidesToScroll: 3,
     autoplay: true,
     arrows:true,
-    // margin:30,
+    margin:30,
     autoplaySpeed: 4000,
     nextArrow:'<button type="button" class="slick-next ">Next</button>',
 
