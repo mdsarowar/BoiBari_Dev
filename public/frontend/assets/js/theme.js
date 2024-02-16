@@ -182,7 +182,7 @@ $("#footer-payment-slider").owlCarousel({
             items: 6,
             nav: false,
             dots: false,
-        }
+        },
     }
 });
 
