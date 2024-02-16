@@ -100,7 +100,7 @@
                                                aria-controls="collapsecategory">Category</h4>
                                            <div id="collapsecategory" class="accordion-collapse collapse show"
                                                 aria-labelledby="headingcategory" data-bs-parent="#accordionExample">
-                                               <div class="accordion-body">
+                                               <div class="accordion-body acccordion_scroll">
                                                    <ul>
                                                        @foreach(App\Category::where('status','1')->get() as $key => $category)
                                                            <li>
@@ -125,7 +125,7 @@
                                                aria-controls="collapseauthor">Author</h4>
                                            <div id="collapseauthor" class="accordion-collapse collapse show"
                                                 aria-labelledby="headingauthor" data-bs-parent="#accordionExample">
-                                               <div class="accordion-body">
+                                               <div class="accordion-body acccordion_scroll">
                                                    <ul>
                                                        @foreach(App\Author::where('status','1')->get() as $key => $author)
                                                            <li>
@@ -150,7 +150,7 @@
                                                aria-controls="collapsepublisher">Publisher</h4>
                                            <div id="collapsepublisher" class="accordion-collapse collapse show"
                                                 aria-labelledby="headingpublisher" data-bs-parent="#accordionExample">
-                                               <div class="accordion-body">
+                                               <div class="accordion-body acccordion_scroll">
                                                    <ul>
                                                        @foreach(App\Publisher::where('status','1')->get() as $key => $publisher)
                                                            <li>
@@ -402,7 +402,7 @@
                                                                aria-controls="collapsecategory">Category</h4>
                                                            <div id="collapsecategory" class="accordion-collapse collapse show"
                                                                 aria-labelledby="headingcategory" data-bs-parent="#accordionExample">
-                                                               <div class="accordion-body">
+                                                               <div class="accordion-body acccordion_scroll">
                                                                    <ul>
                                                                        @foreach(App\Category::where('status','1')->get() as $key => $category)
                                                                            <li>
@@ -427,7 +427,7 @@
                                                                aria-controls="collapseauthor">Author</h4>
                                                            <div id="collapseauthor" class="accordion-collapse collapse show"
                                                                 aria-labelledby="headingauthor" data-bs-parent="#accordionExample">
-                                                               <div class="accordion-body">
+                                                               <div class="accordion-body acccordion_scroll">
                                                                    <ul>
                                                                        @foreach(App\Author::where('status','1')->get() as $key => $author)
                                                                            <li>
@@ -452,7 +452,7 @@
                                                                aria-controls="collapsepublisher">Publisher</h4>
                                                            <div id="collapsepublisher" class="accordion-collapse collapse show"
                                                                 aria-labelledby="headingpublisher" data-bs-parent="#accordionExample">
-                                                               <div class="accordion-body">
+                                                               <div class="accordion-body acccordion_scroll">
                                                                    <ul>
                                                                        @foreach(App\Publisher::where('status','1')->get() as $key => $publisher)
                                                                            <li>
