@@ -188,41 +188,42 @@ $("#footer-payment-slider").owlCarousel({
 
 /* ========== topseler-slidersr Slider =========== */
 
-$('#topseler-slider').slick({
-    slidesToShow: 6,
-    infinite: true,
-    slidesToScroll: 3,
-    autoplay: true,
-    arrows:true,
-    margin:30,
-    autoplaySpeed: 4000,
-    nextArrow:'<button type="button" class="slick-next ">Next</button>',
-
-});
-// $("#topseler-slider").owlCarousel({
+// $('#topseler-slider').slick({
+//     slidesToShow: 6,
+//     infinite: true,
+//     slidesToScroll: 3,
+//     autoplay: true,
+//     arrows:true,
+//     margin:30,
+//     autoplaySpeed: 4000,
+//     nextArrow:'<button type="button" class="slick-next ">Next</button>',
 //
-//     rtl:true,
-//     loop:true,
-//     items: 6,
-//     margin:20,
-//     nav:true,
-//     dots:false,
-//
-//     navText: [ '<i class="position-absolute top-50 start-100 translate-middle "  data-feather="chevron-right"></i>','<i class="position-absolute top-50 start-0 translate-middle" data-feather="chevron-left"></i>'],
-//     // navText: [ '<button type="button" class="position-absolute top-50 start-100 translate-middle btn btn-primary btn-sm"><i class=" "  data-feather="chevron-right"></i></button>','<i class="position-absolute top-50 start-0 translate-middle" data-feather="chevron-left"></i>'],
-//     // navText: [   '<div class="position-absolute top-50 start-100 translate-middle"><i data-feather="chevron-right"></i></div>', '<div class="owl-next">next</div>'],
-//     responsive:{
-//         0:{
-//             items:1
-//         },
-//         600:{
-//             items:3
-//         },
-//         1000:{
-//             items:6
-//         }
-//     }
 // });
+
+$("#topseler-slider").owlCarousel({
+
+    rtl:true,
+    loop:true,
+    items: 6,
+    margin:20,
+    nav:true,
+    dots:false,
+
+    navText: [ '<i class="position-absolute top-50 start-100 translate-middle "  data-feather="chevron-right"></i>','<i class="position-absolute top-50 start-0 translate-middle" data-feather="chevron-left"></i>'],
+    // navText: [ '<button type="button" class="position-absolute top-50 start-100 translate-middle btn btn-primary btn-sm"><i class=" "  data-feather="chevron-right"></i></button>','<i class="position-absolute top-50 start-0 translate-middle" data-feather="chevron-left"></i>'],
+    // navText: [   '<div class="position-absolute top-50 start-100 translate-middle"><i data-feather="chevron-right"></i></div>', '<div class="owl-next">next</div>'],
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:6
+        }
+    }
+});
 
 /* ========== Feature Brand Slider =========== */
 $("#featured-brand-slider").owlCarousel({

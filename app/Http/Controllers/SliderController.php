@@ -236,9 +236,9 @@ class SliderController extends Controller
             $optimizePath = public_path() . '/images/slider/';
             $image = time() . $file->getClientOriginalName();
 
-//            $optimizeImage->fit(1247, 520, function ($constraint) {
-//                $constraint->aspectRatio();
-//            });
+            $optimizeImage->fit(8100, 1230, function ($constraint) {
+                $constraint->aspectRatio();
+            });
             $optimizeImage->save($optimizePath . $image, 72);
 
             $slider->image = $image;

@@ -59,7 +59,7 @@
                             <div class="item">
                                 <div class="home-image">
                                     <img src="{{url('images/slider/'.$slider->image)}}" class="img-fluid" alt=""
-                                        style="height: 350px">
+                                        >
                                 </div>
                                 <div class="home-block" data-aos="fade-up">
                                     <div class="row">
