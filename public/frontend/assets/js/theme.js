@@ -1,6 +1,16 @@
 /* ================================= */
     /*===== Owl Caserol =====*/
 /* ================================= */
+/* ================================= */
+$(window).on('scroll', function () {
+    var scroll = $(window).scrollTop();
+    if (scroll < 50) {
+        $("#home").removeClass("sticky");
+    } else {
+        $("#home").addClass("sticky");
+    }
+});
+/* ================================= */
 
 /* ========== Home Slider =========== */
 $("#home-slider").owlCarousel({

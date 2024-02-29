@@ -6,37 +6,21 @@ $banner = App\BannerSetting::first();
 
     <!-- Navbar Fullscreen Start -->
     <section id="navbar" class="navbar-main-block fullscreen-navbar">
-{{--        <div class="">--}}
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
-                    <div class="row p-1 mb-1 bg-light text-dark">
-                        <div class="col-md-1 bg-info  text-center">
-                            {{--                    <div class="">--}}
-                            <div class="fw-bolder">
+                    <div class="row p-1 mb-1 bg-light text-dark ">
+                        <div class=" d-flex justify-content-between">
+                            <div class="col-md-1 bg-info fw-bolder text-center custome_update">
                                 আপডেট
                             </div>
-                            {{--                    </div>--}}
+                                <marquee  class="col-md-11" data-v-5606edfa="" behavior="scroll" direction="left" >
+                                    👉 বইবাড়ী ওয়েবসাইটে আপনাকে স্বাগতম।
+                                </marquee>
                         </div>
-                        <div class="col-md-11 text-center">
-                            {{--                    <div class="text-center py-1 px-2 white--text font-weight-bold">--}}
-                            <marquee data-v-5606edfa="" behavior="scroll" direction="left"  class="">
-                                 👉 বইবাড়ী ওয়েবসাইটে আপনাকে স্বাগতম।
-                            </marquee>
-                            {{--                    </div>--}}
-                        </div>
+                       
                     </div>
-                    <div class="row g-0">
-                        {{--                <div class="col-xl-12 col-lg-12">--}}
-
-                        {{--                    <div class="welcome-text">--}}
-                        {{--                        <section class="py-0" style="margin-top: 3px;">--}}
-                        {{--                            <div class="d-flex" style="max-width: 1300px; margin: auto;">--}}
-                        {{--                               --}}
-                        {{--                            </div>--}}
-                        {{--                        </section>--}}
-                        {{--                    </div>--}}
-                        {{--                </div>--}}
+                    <!-- <div class="row g-0">
                         <div class="col-xl-9 col-lg-12 col-md-12 col-12">
                             @if($banner && isset($banner) && $banner->status=='1')
                                 <div class="alert alert-primary alert-dismissible fade show" role="alert">
@@ -45,71 +29,10 @@ $banner = App\BannerSetting::first();
                                 </div>
                             @endif
                         </div>
-                        {{--                <div class="col-xl-2 col-lg-2">--}}
-                        {{--                    <div class="language-country-block">--}}
-                        {{--                        <ul>--}}
-                        {{--                            <li>--}}
-                        {{--                                @if(App\AutoDetectGeo::first()->enabel_multicurrency == '1')--}}
-                        {{--                                    <select class="form-select" name="currency" onchange="val()" id="currency">--}}
-
-                        {{--                                        @if(App\AutoDetectGeo::first()->currency_by_country == 1)--}}
-
-                        {{--                                            @forelse($manualcurrency as $currency)--}}
-
-                        {{--                                                @if(isset($currency->currency))--}}
-
-                        {{--                                                    @if(Session::get('currency') && Session::get('currency')['mainid'])--}}
-                        {{--                                                    <option {{ Session::get('currency')['mainid'] == $currency->currency->id ? "selected" : "" }} value="{{ $currency->currency->id }}">{{ $currency->currency->code }} </option>--}}
-                        {{--                                                    @else--}}
-                        {{--                                                    <option value="{{ $currency->currency ? $currency->currency->id : '' }}">{{ $currency->currency ? $currency->currency->code : '' }} </option>--}}
-                        {{--                                                    @endif--}}
-                        {{--                                                @endif--}}
-
-                        {{--                                            @empty--}}
-
-                        {{--                                                <option value="{{ $defCurrency->currency ? $defCurrency->currency->id : '' }}">{{ $defCurrency->currency ? $defCurrency->currency->code : '' }}</option>--}}
-
-                        {{--                                            @endforelse--}}
-
-                        {{--                                        @else--}}
-
-                        {{--                                            @foreach($multiCurrency as $currency)--}}
-                        {{--                                                @if(Session::get('currency') && Session::get('currency')['mainid'])--}}
-                        {{--                                                    <option {{ Session::get('currency')['mainid'] == $currency->currency->id ? "selected" : "" }} value="{{ $currency->currency->id }}">{{ $currency->currency->code }} </option>--}}
-                        {{--                                                @else--}}
-                        {{--                                                    <option value="{{ $currency->currency ? $currency->currency->id : '' }}">{{ $currency->currency ? $currency->currency->code : '' }} </option>--}}
-                        {{--                                                @endif--}}
-                        {{--                                            @endforeach--}}
-
-                        {{--                                        @endif--}}
-
-                        {{--                                    </select>--}}
-
-                        {{--                                    @else--}}
-
-                        {{--                                    <select class="form-select" name="currency" onchange="val()" id="currency">--}}
-
-                        {{--                                        <option value="{{ $defCurrency->currency->id }}">{{ $defCurrency->currency->code }}</option>--}}
-
-                        {{--                                    </select>--}}
-
-                        {{--                                @endif--}}
-                        {{--                            </li>--}}
-                        {{--                            <li>--}}
-                        {{--                                <select class="form-select changed_language" name="" id="changed_lng">--}}
-                        {{--                                    @foreach($langauges as $lang)--}}
-                        {{--                                    <option {{ Session::get('changed_language') == $lang->lang_code ? "selected" : ""}}--}}
-                        {{--                                    value="{{ $lang->lang_code }}">{{ $lang->name }}</option>--}}
-                        {{--                                    @endforeach--}}
-                        {{--                                </select>--}}
-                        {{--                            </li>--}}
-                        {{--                        </ul>--}}
-                        {{--                    </div>--}}
-                        {{--                </div>--}}
-                    </div>
+                    </div> -->
                 </div>
                 <div class="col-md-2 mb-0">
-                    <div class="social-link-block mb-0">
+                    <div class="social-link-block mb-0 custome_social_link_section">
 {{--                        <h5 class="footer-title">{{__('Social Links')}}</h5>--}}
                         <ul>
 
@@ -141,144 +64,6 @@ $banner = App\BannerSetting::first();
                     </div>
                 </div>
             </div>
-{{--            <div class="row mobile">--}}
-{{--                <div class="col-md-1"></div>--}}
-{{--                <div class="col-md-6">--}}
-{{--                    <div class="row p-1 mb-1 bg-light text-dark">--}}
-{{--                        <div class="col-md-1 bg-info  text-center">--}}
-{{--                            --}}{{--                    <div class="">--}}
-{{--                            <div class="fw-bolder">--}}
-{{--                                আপডেট--}}
-{{--                            </div>--}}
-{{--                            --}}{{--                    </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="col-md-11 text-center">--}}
-{{--                            --}}{{--                    <div class="text-center py-1 px-2 white--text font-weight-bold">--}}
-{{--                            <marquee data-v-5606edfa="" behavior="scroll" direction="left"  class="">--}}
-{{--                                💥বিসিএস, ব্যাংক, NTRCA, প্রাইমারি সহ সকল কোর্সে ৬০% ডিসকাউন্টে ভর্তি চলছে নতুন বছর--}}
-{{--                                উপলক্ষে!! 👉আপনার পছন্দ অনুযায়ী 🕙সকাল এবং বিকাল এর 🕙 ব্যাচ থেকে বেছে নিন আপনার--}}
-{{--                                ব্যাচটি...--}}
-{{--                            </marquee>--}}
-{{--                            --}}{{--                    </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="row g-0">--}}
-{{--                        --}}{{--                <div class="col-xl-12 col-lg-12">--}}
-
-{{--                        --}}{{--                    <div class="welcome-text">--}}
-{{--                        --}}{{--                        <section class="py-0" style="margin-top: 3px;">--}}
-{{--                        --}}{{--                            <div class="d-flex" style="max-width: 1300px; margin: auto;">--}}
-{{--                        --}}{{--                               --}}
-{{--                        --}}{{--                            </div>--}}
-{{--                        --}}{{--                        </section>--}}
-{{--                        --}}{{--                    </div>--}}
-{{--                        --}}{{--                </div>--}}
-{{--                        <div class="col-xl-9 col-lg-12 col-md-12 col-12">--}}
-{{--                            @if($banner && isset($banner) && $banner->status=='1')--}}
-{{--                                <div class="alert alert-primary alert-dismissible fade show" role="alert">--}}
-{{--                                    {{substr($banner->content,0,70)}}--}}
-{{--                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i data-feather="x"></i></button>--}}
-{{--                                </div>--}}
-{{--                            @endif--}}
-{{--                        </div>--}}
-{{--                        --}}{{--                <div class="col-xl-2 col-lg-2">--}}
-{{--                        --}}{{--                    <div class="language-country-block">--}}
-{{--                        --}}{{--                        <ul>--}}
-{{--                        --}}{{--                            <li>--}}
-{{--                        --}}{{--                                @if(App\AutoDetectGeo::first()->enabel_multicurrency == '1')--}}
-{{--                        --}}{{--                                    <select class="form-select" name="currency" onchange="val()" id="currency">--}}
-
-{{--                        --}}{{--                                        @if(App\AutoDetectGeo::first()->currency_by_country == 1)--}}
-
-{{--                        --}}{{--                                            @forelse($manualcurrency as $currency)--}}
-
-{{--                        --}}{{--                                                @if(isset($currency->currency))--}}
-
-{{--                        --}}{{--                                                    @if(Session::get('currency') && Session::get('currency')['mainid'])--}}
-{{--                        --}}{{--                                                    <option {{ Session::get('currency')['mainid'] == $currency->currency->id ? "selected" : "" }} value="{{ $currency->currency->id }}">{{ $currency->currency->code }} </option>--}}
-{{--                        --}}{{--                                                    @else--}}
-{{--                        --}}{{--                                                    <option value="{{ $currency->currency ? $currency->currency->id : '' }}">{{ $currency->currency ? $currency->currency->code : '' }} </option>--}}
-{{--                        --}}{{--                                                    @endif--}}
-{{--                        --}}{{--                                                @endif--}}
-
-{{--                        --}}{{--                                            @empty--}}
-
-{{--                        --}}{{--                                                <option value="{{ $defCurrency->currency ? $defCurrency->currency->id : '' }}">{{ $defCurrency->currency ? $defCurrency->currency->code : '' }}</option>--}}
-
-{{--                        --}}{{--                                            @endforelse--}}
-
-{{--                        --}}{{--                                        @else--}}
-
-{{--                        --}}{{--                                            @foreach($multiCurrency as $currency)--}}
-{{--                        --}}{{--                                                @if(Session::get('currency') && Session::get('currency')['mainid'])--}}
-{{--                        --}}{{--                                                    <option {{ Session::get('currency')['mainid'] == $currency->currency->id ? "selected" : "" }} value="{{ $currency->currency->id }}">{{ $currency->currency->code }} </option>--}}
-{{--                        --}}{{--                                                @else--}}
-{{--                        --}}{{--                                                    <option value="{{ $currency->currency ? $currency->currency->id : '' }}">{{ $currency->currency ? $currency->currency->code : '' }} </option>--}}
-{{--                        --}}{{--                                                @endif--}}
-{{--                        --}}{{--                                            @endforeach--}}
-
-{{--                        --}}{{--                                        @endif--}}
-
-{{--                        --}}{{--                                    </select>--}}
-
-{{--                        --}}{{--                                    @else--}}
-
-{{--                        --}}{{--                                    <select class="form-select" name="currency" onchange="val()" id="currency">--}}
-
-{{--                        --}}{{--                                        <option value="{{ $defCurrency->currency->id }}">{{ $defCurrency->currency->code }}</option>--}}
-
-{{--                        --}}{{--                                    </select>--}}
-
-{{--                        --}}{{--                                @endif--}}
-{{--                        --}}{{--                            </li>--}}
-{{--                        --}}{{--                            <li>--}}
-{{--                        --}}{{--                                <select class="form-select changed_language" name="" id="changed_lng">--}}
-{{--                        --}}{{--                                    @foreach($langauges as $lang)--}}
-{{--                        --}}{{--                                    <option {{ Session::get('changed_language') == $lang->lang_code ? "selected" : ""}}--}}
-{{--                        --}}{{--                                    value="{{ $lang->lang_code }}">{{ $lang->name }}</option>--}}
-{{--                        --}}{{--                                    @endforeach--}}
-{{--                        --}}{{--                                </select>--}}
-{{--                        --}}{{--                            </li>--}}
-{{--                        --}}{{--                        </ul>--}}
-{{--                        --}}{{--                    </div>--}}
-{{--                        --}}{{--                </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-md-2 mb-0">--}}
-{{--                    <div class="social-link-block mb-0">--}}
-{{--                        <h5 class="footer-title">{{__('Social Links')}}</h5>--}}
-{{--                        <ul>--}}
-
-{{--                            @foreach($socials as $social)--}}
-
-{{--                                @if($social->url=='https://facebook.com' || $social->url=='http://facebook.com')--}}
-{{--                                    <li><a target="_blank" href="https://www.facebook.com/boibaari?mibextid=ZbWKwL" title="facebook"><i class="" data-feather="facebook"></i></a></li>--}}
-{{--                                @endif--}}
-
-{{--                                @if($social->url=='https://twitter.com' || $social->url=='http://twitter.com')--}}
-{{--                                    <li><a target="_blank" href="{{$social->url}}" title="twitter"><i data-feather="twitter"></i></a></li>--}}
-{{--                                @endif--}}
-
-{{--                                @if($social->url=='https://instagram.com' || $social->url=='http://instagram.com')--}}
-{{--                                    <li><a target="_blank" href="{{$social->url}}" title="instagram"><i data-feather="instagram"></i></a></li>--}}
-{{--                                @endif--}}
-
-{{--                                @if($social->url=='https://youtube.com' || $social->url=='http://youtube.com')--}}
-{{--                                    <li><a target="_blank" href="{{$social->url}}" title="youtube"><i data-feather="youtube"></i></a></li>--}}
-{{--                                @endif--}}
-
-{{--                                @if($social->url=='https://linkedin.com' || $social->url=='http://linkedin.com')--}}
-{{--                                    <li><a target="_blank" href="{{$social->url}}" title="linkedin"><i data-feather="linkedin"></i></a></li>--}}
-{{--                                @endif--}}
-
-{{--                            @endforeach--}}
-
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-{{--        </div>--}}
     </section>
     <!-- Navbar Smallscreen End -->
 
@@ -291,18 +76,10 @@ $banner = App\BannerSetting::first();
                         <a href="{{ url('/') }}" title="{{ $genral->title }}"><img src="{{url('images/genral/'.$front_logo)}}" class="img-fluid" alt="{{ $genral->title }}" style="height: 50px;width: 150px"></a>
                     </div>
                 </div>
-                <div class="col-lg-7 border-0">
-                    <div class="topbar-search-product search-cat-box" id="search-xs">
-                        <form method="get" enctype="multipart/form-data" action="{{url('search/')}}" class="search-form" id="searchSubmit">
+                <div class="col-lg-7 "> 
+                    <div class="topbar-search-product search-cat-box " id="search-xs">
+                        <form method="get" enctype="multipart/form-data" action="{{url('search/')}}" class="search-form custome_search_section" id="searchSubmit">
                             <div class="input-group">
-{{--                                <span class="input-group-btn">--}}
-{{--                                    <select id="searchDropMenu" class="form-select searchDropMenu" onchange="changeCategory(this.value,'main')" aria-label="Default select example" name="cat">--}}
-{{--                                        <option selected>{{__('All Categories')}}</option>--}}
-{{--                                        @foreach(App\Category::where('status','1')->orderBy('position')->get() as $key => $category)--}}
-{{--                                        <option value="{{ $category->id }}">{{ $category->title }}</option>--}}
-{{--                                        @endforeach--}}
-{{--                                    </select>--}}
-{{--                                </span>--}}
                                 <div class="form-group">
                                     <input type="text" id="ipad_vsearch" class="form-control search-field-new" name="keyword" placeholder="{{__('Search For Products Brands And Categories')}}">
                                     <a href="javascript:" onclick="searchInput()" title="search"><i data-feather="search"></i></a>
@@ -643,18 +420,7 @@ $banner = App\BannerSetting::first();
                                         </span>
 
                                      </i>
-{{--                                    <span class="topbar-action-badge cart_count" id="cart_amount">--}}
-{{--                                        <?php--}}
-{{--                                        if(Auth::check()){--}}
-{{--                                            echo App\Cart::where('user_id', Auth::user()->id)->count();--}}
-{{--                                        } else {--}}
-{{--                                            echo Session::get('cart')?count(Session::get('cart')):'0';--}}
-{{--//                                                echo Session::get('guest_cart_count')? Session::get('guest_cart_count'):'0';--}}
-{{--                                        }--}}
-{{--                                        ?>--}}
-{{--                                                                                {{\Illuminate\Support\Facades\Session::get()}}--}}
 
-{{--                                    </span>--}}
                                 </a>
                             </li>
                             <li>
@@ -690,7 +456,7 @@ $banner = App\BannerSetting::first();
     <!-- Topbar App End -->
 
         <!-- Home Start -->
-    <section id="home" class="home-main-block product-home">
+    <section id="home" class="home-main-block product-home sub_nav_sticky">
       <div class="container">
         <div class="row g-0">
 {{--          <div class="col-xl-3 col-lg-3">--}}
@@ -888,3 +654,4 @@ $banner = App\BannerSetting::first();
 {{--            }--}}
         }
     </script>
+
