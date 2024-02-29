@@ -20,16 +20,6 @@ $banner = App\BannerSetting::first();
                         </div>
                        
                     </div>
-                    <!-- <div class="row g-0">
-                        <div class="col-xl-9 col-lg-12 col-md-12 col-12">
-                            @if($banner && isset($banner) && $banner->status=='1')
-                                <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                                    {{substr($banner->content,0,70)}}
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i data-feather="x"></i></button>
-                                </div>
-                            @endif
-                        </div>
-                    </div> -->
                 </div>
                 <div class="col-md-2 mb-0">
                     <div class="social-link-block mb-0 custome_social_link_section">

@@ -80,25 +80,36 @@ class HomeController extends Controller
         $bcs=Category::where('title','{"en":"BCS"}')->first();
         $bank=Category::where('title','{"en":"Bank"}')->first();
         $academic=Category::where('title','{"en":"Academic"}')->first();
-        $job=Category::where('title','{"en":"\u099c\u09ac"}')->first();
-        $job_sub=Subcategory::where('parent_cat',$job->id)->latest()->take(5)->get();
+        $job=Category::where('title','{"en":"Job Preparation"}')->first();
+//        $job=Category::where('title','Job Preparation')->first();
+//        $job=Category::where('status','1')->first();
+
+        if (isset($job)){
+            $job_sub=Subcategory::where('parent_cat',$job->id)->latest()->take(5)->get();
+        }
+        $job_1 = SimpleProduct::where('status','1')->where('subcategory_id',$job_sub[0]->id)->paginate(9);
+
 //        return $job_sub[0]->title;
 //        $tps=SimpleProduct::where('status','1')->where('subcategory_id',$job_sub[0]->id)->latest()->paginate(9);
-//        return $tps;
+//        return $job_1;
         if($genral && $genral->verify_status=='1'){
             $cat_infos = Category::where('status','1')->orderBy('position');
             $data['categories'] = $cat_infos->paginate(10);
             $data['bcs'] = $bcs;
             $data['bank'] = $bank;
             $data['academic'] = $academic;
+            $data['jobsubs'] = $job_sub;
             $data['authors'] =Author::where('status','1')->latest()->paginate(8);
             $data['publishers'] =Publisher::where('status','1')->latest()->paginate(8);
             $data['top_categories'] = Category::where('status','1')->orderBy('id','DESC')->paginate(8);
             $data['top_selles'] = SimpleProduct::where('status',1)->orderBy('qty','DESC')->paginate(10);
             $data['latest_products'] = SimpleProduct::where('status','1')->orderBy('id','DESC')->paginate(9);
-            $data['job_1'] = SimpleProduct::where('status','1')->where('subcategory_id',$job_sub[0]->id)->paginate(9);
-            $data['job_2'] = SimpleProduct::where('status','1')->where('subcategory_id',$job_sub[1]->id)->paginate(9);
-            $data['job_3'] = SimpleProduct::where('status','1')->where('subcategory_id',$job_sub[2]->id)->paginate(9);
+            if (isset($job_sub)){
+                $data['job_1'] = SimpleProduct::where('status','1')->where('subcategory_id',$job_sub[0]->id)->paginate(9);
+                $data['job_2'] = SimpleProduct::where('status','1')->where('subcategory_id',$job_sub[1]->id)->paginate(9);
+                $data['job_3'] = SimpleProduct::where('status','1')->where('subcategory_id',$job_sub[2]->id)->paginate(9);
+            }
+
 
 
 //            $data['top_sellers'] = SimpleProduct::where('id',$orders->simple_pro_ids)->paginate(10);
