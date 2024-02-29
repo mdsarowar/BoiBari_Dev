@@ -102,7 +102,7 @@ class LoginController extends Controller
            $user = new User;
            $user->name          =     $userSocial->name;
            $user->email         =     $userSocial->email != '' ? $userSocial->email : $userSocial->name.'@'.$service.'.com';
-           $user->password      =     bcrypt(str_random(8));
+           $user->password      =     bcrypt(str_random(6));
            $user->social_id     =     $userSocial->getId();
            $user->save();
 

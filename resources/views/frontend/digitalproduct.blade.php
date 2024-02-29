@@ -674,7 +674,7 @@
   <section id="product-description" class="product-description-main-block">
     <div class="container bg-white">
       <div class="row">
-        <div class="col-lg-7 col-12">
+        <div class="col-lg-7 col-12 py-3">
           <div class="des-feature-review-block">
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
               <li class="nav-item" role="presentation">
