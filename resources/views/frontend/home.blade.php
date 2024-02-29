@@ -1347,7 +1347,7 @@
             <?php $conversion_rate = 1; ?>
     @endif
 
-    @if(isset($jobsubs))
+    @if(isset($job_1))
         <!-- BCS Books Start -->
         <section id="feature-brand" class="feature-brand-main-block p-3">
             <div class="container  pc">
@@ -1878,7 +1878,7 @@
     @endif
 
 
-    @if(isset($jobsubs))
+    @if(isset($job_2))
         <!-- Bank Books Start -->
         <section id="feature-brand" class="feature-brand-main-block p-3">
             <div class="container pc">
@@ -2300,7 +2300,7 @@
         <!-- Bank Books End -->
     @endif
 
-    @if(isset($jobsubs))
+    @if(isset($job_3))
         <!-- Academic Start -->
         <section id="feature-brand" class="feature-brand-main-block p-3">
             <div class="container pc">

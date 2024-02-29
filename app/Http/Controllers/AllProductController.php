@@ -45,18 +45,23 @@ class AllProductController extends Controller
 
     public function filter_product(Request $request)
     {
-//        return $request;
+//        return $request->categories;
 //        $a=explode(str_replace(',','',$request->authors));
 //        return $a;
         $products=SimpleProduct::where('status','1');
-        if ($request->categories){
+//        $products=$products->whereIn('category_id',$request->categories);
+//        return $products;
+        if (isset($request->categories)){
             $products=$products->whereIn('category_id',$request->categories);
+//            return $products;
         }
-        if ($request->authors){
+        if (isset($request->authors)){
             $products=$products->whereIn('author_id',$request->authors);
+//            return $products;
         }
-        if ($request->publishers){
+        if (isset($request->publishers)){
             $products=$products->whereIn('publisher_id',$request->publishers);
+//            return $products;
         }
 //        else{
             $products=$products->paginate(12);

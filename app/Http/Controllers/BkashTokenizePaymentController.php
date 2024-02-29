@@ -21,6 +21,7 @@ class BkashTokenizePaymentController extends Controller
 
     public function createPayment(Request $request)
     {
+
         $inv = uniqid();
         $request['intent'] = 'sale';
         $request['mode'] = '0011'; //0011 for checkout
@@ -29,6 +30,7 @@ class BkashTokenizePaymentController extends Controller
         $request['amount'] =  round(Crypt::decrypt($request->amount), 2);
         $request['merchantInvoiceNumber'] = $inv;
         $request['callbackURL'] = config("bkash.callbackURL");
+//        return $request;
 
         $request_data_json = json_encode($request->all());
 
@@ -44,6 +46,7 @@ class BkashTokenizePaymentController extends Controller
 
     public function callBack(Request $request)
     {
+//        return $request;
         if ($request->status == 'success'){
             $response = BkashPaymentTokenize::executePayment($request->paymentID);
             if (!$response){ //if executePayment payment not found call queryPayment
