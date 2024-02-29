@@ -48,8 +48,8 @@
         <!-- Modal End -->
     @endif
 
-    <!-- Home Start [slider] -->
-    <section id="home" class="home-main-block" data-aos="fade-left">
+    <!-- Home Start [slider] --> 
+    <section id="home" class="home-main-block" data-aos="fade-left" style="margin-top:54px" >
         <div class="container-fluid">
             <div class="row g-0">
                 {{--                <div class="col-xl-3 col-lg-3"></div>--}}
@@ -106,10 +106,10 @@
                 <div class="card shadow p-3 mb-5 bg-white rounded">
                     <div class="card-header bg-white border-0">
                         <div class="row " style="height: 50px;">
-                            <div class="col-lg-6 pt-3">
+                            <div class="col-lg-6">
                                 <h3 class="section-title ">{{__('Top Categories')}} </h3>
                             </div>
-                            <div class="col-lg-6 pt-3">
+                            <div class="col-lg-6">
                                 <div class="view-all-btn">
                                     <a href="{{route('all_category')}}" type="button" class="btn btn-primary"
                                        title="{{__('View All')}}">{{__('View All')}}</a>
@@ -154,7 +154,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
         <!-- Top Categories End -->
@@ -168,10 +167,10 @@
                 <div class="card shadow p-3 mb-5 bg-white rounded" >
                     <div class="card-header bg-white border-0">
                         <div class="row " style="height: 50px;">
-                            <div class="col-lg-6 pt-4">
+                            <div class="col-lg-6 py-4">
                                 <h3 class="section-title">{{__('Top Seller Books')}}</h3>
                             </div>
-                            <div class="col-lg-6 pt-4">
+                            <div class="col-lg-6 py-4">
                                 <div class="view-all-btn">
                                     <a href="{{route('all_product')}}" type="button" class="btn btn-primary"
                                        title="{{__('View All')}}">{{__('View All')}}</a>
@@ -374,10 +373,10 @@
             <div class="container bg-white mobile">
                 <div class="row " >
                     {{--                    <div class="col-12">--}}
-                    <div class="col-8 pt-4">
+                    <div class="col-8 py-4">
                         <h3 class="section-title">{{__('Top Seller Books')}}</h3>
                     </div>
-                    <div class="col-4 pt-4 float-right">
+                    <div class="col-4 py-4 float-right">
                         <div class="view-all-btn">
                             <a href="{{route('all_product')}}" type="button" class="btn btn-primary"
                                title="{{__('View All')}}">{{__('View All')}}</a>
@@ -591,10 +590,10 @@
                 <div class="card shadow p-3 mb-5 bg-white rounded">
                     <div class="card-header bg-white border-0">
                         <div class="row" style="height: 50px;">
-                            <div class="col-lg-6 pt-4">
+                            <div class="col-lg-6 py-4">
                                 <h3 class="section-title ">{{__('Featured Products')}}</h3>
                             </div>
-                            <div class="col-lg-6 pt-4">
+                            <div class="col-lg-6 py-4">
                                 <div class="view-all-btn">
                                     <a href="{{route('all_product')}}" type="button" class="btn btn-primary"
                                        title="{{__('View All')}}">{{__('View All')}}</a>
@@ -795,10 +794,10 @@
             <div class="container bg-white mobile">
                 <div class="row " >
                     {{--                    <div class="col-12">--}}
-                    <div class="col-8 pt-4">
+                    <div class="col-8 py-4">
                         <h3 class="section-title">{{__('Featured Products')}}</h3>
                     </div>
-                    <div class="col-4 pt-4 float-right">
+                    <div class="col-4 py-4 float-right">
                         <div class="view-all-btn">
                             <a href="{{route('all_product')}}" type="button" class="btn btn-primary"
                                title="{{__('View All')}}">{{__('View All')}}</a>

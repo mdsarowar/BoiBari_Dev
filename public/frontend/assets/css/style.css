@@ -9,6 +9,46 @@
 */
 
 
+/* =============================== */
+/* Chat-box-code */
+/* <div class="floating-container custome_chat_box">
+<div class="floating-button ">
+    <a href="" data-bs-toggle="tooltip" data-bs-placement="left"
+        data-bs-title="{{__('Chat')}}">
+        <i class="fas fa-paper-plane"></i>
+    </a>
+</div>
+</div> */
+
+
+#navbar {
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+    background-color: white;
+  /* top: 42px; */
+} 
+.sub_nav_sticky {
+    position: fixed !important;
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+    top: 113px;
+} 
+.topbar-main-block {
+    margin-top: 38px;
+}
+.sticky {
+	top: 35px !important;
+}
+.custome_chat_box {
+    margin-bottom: 115px !important;
+}
+.custome_chat_box a i{
+color: white;
+}
+/* =============================== */
+
 /* =============== Colors Used ===================== */
 
 :root {
@@ -109,10 +149,10 @@ ul {
     margin-bottom: 0;
 }
 
-.section-title {
+/* .section-title {
     margin-bottom: 50px;
     line-height: 25px;
-}
+} */
 
 .form-control:focus {
     box-shadow: none;
@@ -465,6 +505,9 @@ ul {
 }
 
 @media (max-width: 576px) {
+    /* .product-home {
+        position: unset;
+    } */
     .login-modal-block {
         padding: 30px;
     }
@@ -488,6 +531,10 @@ ul {
 }
 
 @media screen and (max-width: 700px) {
+
+    /* .product-home {
+        position: unset;
+    } */
     .mobile{
         /*color: red;*/
     }
@@ -497,6 +544,10 @@ ul {
     }
 }
 @media screen and (min-width: 700px) {
+
+    /* .product-home {
+        position: unset;
+    } */
     .mobile{
         /*color: red;*/
         display: none;
@@ -507,6 +558,9 @@ ul {
 }
 
 @media (max-width: 767px) {
+    /* .product-home {
+        position: unset;
+    } */
     .login-block .field-icon {
         right: 13%;
     }
@@ -548,6 +602,7 @@ ul {
     bottom: 0;
     right: 0;
     margin: 35px 25px;
+    z-index: 1000;
 }
 
 .floating-container .floating-button {
@@ -643,6 +698,9 @@ select option {
     color: var(--text-white-color);
 }
 @media (max-width: 576px) {
+    /* .product-home {
+        position: unset;
+    } */
     .language-country-block {
         display: none;
     }
@@ -787,10 +845,20 @@ select option {
     width: 20px;
     height: 20px;
 }
+.custome_update{
+    width: 100px;
+}
+.custome_search_section{
+    border: 1px solid rgb(238, 237, 237);
+    border-radius: 50px;
+    /* display: inherit; */
+    }
 .search-form .form-group {
     width: 75%;
-    border-left: 1px solid #E7EAEF;
+    /* border-left: 1px solid #E7EAEF; */
+    border: 0;
 }
+
 .topbar-product-icon {
     padding: 13px 0 13px 20px;
     float: right;
@@ -864,7 +932,7 @@ select option {
     transition: all 0.7s ease;
 }
 .topbar-product-icon ul li .dropdown ul {
-    margin-top: 34px !important;
+    margin-top: 82px !important;
     margin-left: -204px!important;
     border-radius: 0;
     width: 240px;
@@ -1115,6 +1183,10 @@ select option {
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
+
+    .custome_social_link_section{
+        display: none;
+    }
     .topbar-product-icon {
         padding: 19px 0;
     }
@@ -1128,11 +1200,16 @@ select option {
     }
 }
 @media (min-width: 767px) and (max-width: 992px) {
+
+    .custome_social_link_section{
+        display: none;
+    }
     .fullscreen-topbar {
         display: none;
     }
     .smallscreen-topbar {
         display: block;
+        margin-top: 60px;
     }
     .smallscreen-topbar .logo {
         border-right: inherit;
@@ -1247,11 +1324,16 @@ select option {
     }
 }
 @media (max-width: 767px) {
+
+    .custome_social_link_section{
+        display: none;
+    }
     .fullscreen-topbar {
         display: none;
     }
     .smallscreen-topbar {
         display: block;
+        margin-top: 70px;
     }
     .smallscreen-topbar .logo {
         border-right: inherit;
@@ -2705,7 +2787,7 @@ select option {
     /*===== Offer One =====*/
 /* ================================= */
 .offer-one-main-block {
-    padding: 50px 0;
+    padding: 15px 0;
 }
 .gift-img {
     position: relative;
@@ -4645,7 +4727,7 @@ background-color: black;
     margin-bottom: 0;
 }
 .product-main-block {
-    padding: 100px 0 50px;
+    padding: 50px 0 50px;
 }
 .product-des-img-block {
     padding: 20px 0;
@@ -4824,9 +4906,9 @@ background-color: black;
 /* ================================= */
   /*===== Product Description =====*/
 /* ================================= */
-.product-description-main-block {
+/* .product-description-main-block {
     padding: 50px 0;
-}
+} */
 .des-feature-review-block .nav-pills .nav-item {
     margin-right: 15px;
     margin-bottom: 20px;
@@ -6079,10 +6161,10 @@ input.razorpay-payment-button {
     /* ====== Wishlist ====== */
 /* ================================= */
 .wishlist-breadcrumb {
-    height: 225px;
+    height: 70px;
 }
 .wishlist-breadcrumb .breadcrumb-nav {
-    top: 40%;
+    top: 15%;
     left: 4%;
     text-align: left;
 }

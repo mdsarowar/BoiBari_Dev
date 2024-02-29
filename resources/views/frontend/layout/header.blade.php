@@ -6,30 +6,23 @@ $banner = App\BannerSetting::first();
 
     <!-- Navbar Fullscreen Start -->
     <section id="navbar" class="navbar-main-block fullscreen-navbar">
-{{--        <div class="">--}}
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
-                    <div class="row d-flex justify-content-between">
-                        <div class="col-md-1 bg-info  text-center">
-                            {{--                    <div class="">--}}
-{{--                            <span class="fw-bolder">--}}
+                    <div class="row p-1 mb-1 bg-light text-dark ">
+                        <div class=" d-flex justify-content-between">
+                            <div class="col-md-1 bg-info fw-bolder text-center custome_update">
                                 আপডেট
-{{--                            </span>--}}
-                            {{--                    </div>--}}
+                            </div>
+                                <marquee  class="col-md-11" data-v-5606edfa="" behavior="scroll" direction="left" >
+                                    👉 বইবাড়ী ওয়েবসাইটে আপনাকে স্বাগতম।
+                                </marquee>
                         </div>
-                        <div class="col-md-11 text-center">
-                            {{--                    <div class="text-center py-1 px-2 white--text font-weight-bold">--}}
-                            <marquee data-v-5606edfa="" behavior="scroll" direction="left"  class="">
-                                 👉 বইবাড়ী ওয়েবসাইটে আপনাকে স্বাগতম।
-                            </marquee>
-                            {{--                    </div>--}}
-                        </div>
+                       
                     </div>
-
                 </div>
                 <div class="col-md-2 mb-0">
-                    <div class="social-link-block mb-0">
+                    <div class="social-link-block mb-0 custome_social_link_section">
 {{--                        <h5 class="footer-title">{{__('Social Links')}}</h5>--}}
                         <ul>
 
@@ -61,7 +54,6 @@ $banner = App\BannerSetting::first();
                     </div>
                 </div>
             </div>
-
     </section>
     <!-- Navbar Smallscreen End -->
 
@@ -74,18 +66,10 @@ $banner = App\BannerSetting::first();
                         <a href="{{ url('/') }}" title="{{ $genral->title }}"><img src="{{url('images/genral/'.$front_logo)}}" class="img-fluid" alt="{{ $genral->title }}" style="height: 50px;width: 150px"></a>
                     </div>
                 </div>
-                <div class="col-lg-7 border-0">
-                    <div class="topbar-search-product search-cat-box" id="search-xs">
-                        <form method="get" enctype="multipart/form-data" action="{{url('search/')}}" class="search-form" id="searchSubmit">
+                <div class="col-lg-7 "> 
+                    <div class="topbar-search-product search-cat-box " id="search-xs">
+                        <form method="get" enctype="multipart/form-data" action="{{url('search/')}}" class="search-form custome_search_section" id="searchSubmit">
                             <div class="input-group">
-{{--                                <span class="input-group-btn">--}}
-{{--                                    <select id="searchDropMenu" class="form-select searchDropMenu" onchange="changeCategory(this.value,'main')" aria-label="Default select example" name="cat">--}}
-{{--                                        <option selected>{{__('All Categories')}}</option>--}}
-{{--                                        @foreach(App\Category::where('status','1')->orderBy('position')->get() as $key => $category)--}}
-{{--                                        <option value="{{ $category->id }}">{{ $category->title }}</option>--}}
-{{--                                        @endforeach--}}
-{{--                                    </select>--}}
-{{--                                </span>--}}
                                 <div class="form-group">
                                     <input type="text" id="ipad_vsearch" class="form-control search-field-new" name="keyword" placeholder="{{__('Search For Products Brands And Categories')}}">
                                     <a href="javascript:" onclick="searchInput()" title="search"><i data-feather="search"></i></a>
@@ -426,18 +410,7 @@ $banner = App\BannerSetting::first();
                                         </span>
 
                                      </i>
-{{--                                    <span class="topbar-action-badge cart_count" id="cart_amount">--}}
-{{--                                        <?php--}}
-{{--                                        if(Auth::check()){--}}
-{{--                                            echo App\Cart::where('user_id', Auth::user()->id)->count();--}}
-{{--                                        } else {--}}
-{{--                                            echo Session::get('cart')?count(Session::get('cart')):'0';--}}
-{{--//                                                echo Session::get('guest_cart_count')? Session::get('guest_cart_count'):'0';--}}
-{{--                                        }--}}
-{{--                                        ?>--}}
-{{--                                                                                {{\Illuminate\Support\Facades\Session::get()}}--}}
 
-{{--                                    </span>--}}
                                 </a>
                             </li>
                             <li>
@@ -473,7 +446,7 @@ $banner = App\BannerSetting::first();
     <!-- Topbar App End -->
 
         <!-- Home Start -->
-    <section id="home" class="home-main-block product-home">
+    <section id="home" class="home-main-block product-home sub_nav_sticky">
       <div class="container">
         <div class="row g-0">
 {{--          <div class="col-xl-3 col-lg-3">--}}
@@ -671,3 +644,4 @@ $banner = App\BannerSetting::first();
 {{--            }--}}
         }
     </script>
+
