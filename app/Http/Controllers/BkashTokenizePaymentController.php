@@ -46,7 +46,7 @@ class BkashTokenizePaymentController extends Controller
 
     public function callBack(Request $request)
     {
-//        return $request;
+//        return "saorar";
         if ($request->status == 'success'){
             $response = BkashPaymentTokenize::executePayment($request->paymentID);
             if (!$response){ //if executePayment payment not found call queryPayment

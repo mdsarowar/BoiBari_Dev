@@ -27,7 +27,6 @@ class CartController extends Controller
      */
     public function index($id)
     {
-
         $user = Auth::user();
         $qty = 0;
         if (!empty($user)) {
@@ -97,6 +96,7 @@ class CartController extends Controller
 
     public function create_cart()
     {
+//        return 'sarowar';
 //        $cart= Session::get('cart');
 //        foreach ($cart as $key => $row) {
 //            print $row;
@@ -144,8 +144,9 @@ class CartController extends Controller
                     return $query->where('status', '1');
                 })->whereHas('variant')->get();
 
+//            return $cart_table;
             foreach ($cart_table as $key => $value) {
-
+//return $value->semi_total;
                 if ($value->semi_total != 0) {
                     $total = $total + $value->semi_total + $value->shipping + $value->tax_amount;
                 } else {
@@ -2866,6 +2867,7 @@ class CartController extends Controller
         }
 
         DB::beginTransaction();
+
 
         $cart->simple_pro_id = $pro_id;
         $cart->ori_price = $price;

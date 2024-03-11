@@ -268,7 +268,7 @@ class SimpleProductsController extends Controller
 
         $request->validate([
             'product_name' => 'required|string',
-            'brand_id' => 'required',
+//            'brand_id' => 'required',
 //            'store_id' => 'required',
 //            'subcategory_id' => 'required',
             'product_detail' => 'required|max:10000',
@@ -648,7 +648,7 @@ class SimpleProductsController extends Controller
 
         $request->validate([
             'product_name' => 'required|string',
-            'brand_id' => 'required',
+//            'brand_id' => 'required',
 //            'store_id' => 'required',
 //            'subcategory_id' => 'required',
             'product_detail' => 'required|max:10000',

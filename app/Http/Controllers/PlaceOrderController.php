@@ -27,7 +27,7 @@ use Twilosms;
 
 class PlaceOrderController extends Controller
 {
-    public function placeorder($txn_id, $payment_method, $order_id, $payment_status, $saleid = null, $file = null ,$number=null)
+    public function placeorder($txn_id, $payment_method, $order_id, $payment_status, $saleid = null, $file = null ,$number=null,$customer_number=null)
     {
 //        return 'hello';
 //        return $number;

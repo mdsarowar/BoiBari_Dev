@@ -215,7 +215,7 @@ $("#topseler-slider").owlCarousel({
     rtl:true,
     loop:true,
     items: 6,
-    margin:20,
+    margin:10,
     nav:true,
     dots:false,
 
@@ -296,7 +296,7 @@ $("#bcs-book-slider").owlCarousel({
     autoHeight: false,
     touchDrag: true,
     mouseDrag: true,
-    margin: 20,
+    margin: 10,
     autoplay: true,
     lazyLoad:true,
     slideSpeed: 600,

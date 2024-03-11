@@ -456,6 +456,10 @@
                                    <td style="width: 70%;">{{__('Subtotal')}}</td>
                                    <td><i class="{{session()->get('currency')['value']}}"></i> {{price_format($total*$conversion_rate,2)}}</td>
                                </tr>
+                               <tr>
+                                   <td style="width: 70%;">{{__('Curier Charge')}}</td>
+                                   <td><i class="{{session()->get('shippingcharge')}}"></i> {{price_format($shippingcharge*$conversion_rate,2)}}</td>
+                               </tr>
                                @if(Session::get('gift'))
                                    <tr>
                                        <td style="width: 70%;">{{ __('Gift Discount') }}</td>

@@ -89,8 +89,8 @@
 
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="text-dark"> {{__("Product Brand:")}} <span class="text-danger">*</span> </label>
-                                                    <select data-placeholder="Please select brand" required="" name="brand_id" class="select2 form-control">
+                                                    <label class="text-dark"> {{__("Product Brand:")}} </label>
+                                                    <select data-placeholder="Please select brand"  name="brand_id" class="select2 form-control">
                                                         <option value="">Please Select</option>
                                                         @if(!empty($brands_all))
                                                         @foreach($brands_all as $brand)
@@ -197,9 +197,19 @@
                                                     </small>
                                                 </div>
                                             </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="text-dark">{{ __("Product Tags :") }}</label>
+                                                    <input data-role="tagsinput" class="form-control select2" placeholder="Enter product tags by comma" type="text" class="form-control" name="product_tags" value="{{ old('product_tags') }}">
+                                                </div>
+                                            </div>
 
-
-
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="text-dark">{{ __("Weight :") }}</label>
+                                                    <input min="0" type="text" placeholder="Weight" class="form-control" name="weight" step="0.01" value="{{ old('weight') }}">
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <div class="row">
@@ -224,6 +234,8 @@
                                                     <input min="0" type="text" placeholder="Retail Price" class="form-control" name="retail_price" step="0.01" value="{{ $product->retail_price }}">
                                                 </div>
                                             </div>
+
+
 
 
                                         </div>

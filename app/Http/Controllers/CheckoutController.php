@@ -57,12 +57,15 @@ class CheckoutController extends Controller
         $pincodesystem = Config::first()->pincode_system;
 
         $getaddress = $request->seladd;
-//        return $request->seladd;
+//        return $getaddress;
 //        return $pincodesystem;
 
         if (!isset($getaddress)) {
             $getaddress = Session::get('address');
+//            return $getaddress;
         }
+//        return $pincodesystem;
+//        return 'sarowar';
 
         #if pincode validation enable !
         if ($pincodesystem == 1) {
@@ -104,9 +107,9 @@ class CheckoutController extends Controller
 
                 Session::put('bil_total', $total);
             }
-//            return $total;
+//            return Session::get('shippingcharge');
 
-            return redirect(route('get.billing.view'));
+            return redirect(route('checkout'));
         }
     }
 
@@ -121,28 +124,31 @@ class CheckoutController extends Controller
 
         if (auth()->check()) {
 
-            $total = 0;
-            foreach (auth()->user()->cart as $key => $val) {
-                if($val->active_cart == 1){
-                    if ($val->semi_total == 0) {
-                        $price = $val->price_total;
-                    } else {
-                        $price = $val->semi_total;
-                    }
+            $total = Session::get('bil_total');
+            $shippingcharge=Session::get('shippingcharge');
+//            return $shippingcharge;
+//            foreach (auth()->user()->cart as $key => $val) {
+//                if($val->active_cart == 1){
+//                    if ($val->semi_total == 0) {
+//                        $price = $val->price_total;
+//                    } else {
+//                        $price = $val->semi_total;
+//                    }
+//
+//                $total = $total + $price;
+//
+//                if (get_default_shipping()->whole_order != 1) {
+//                    $shippingcharge += ShippingPrice::calculateShipping($val);
+//                    $shippingcharge += shippingprice($val);
+//                } else {
+//                    $shippingcharge = ShippingPrice::calculateShipping($val);
+//                    $shippingcharge += shippingprice($val);
+//                }
+//             }
+//
+//            }
 
-                $total = $total + $price;
-
-                if (get_default_shipping()->whole_order != 1) {
-                    $shippingcharge += ShippingPrice::calculateShipping($val);
-                    $shippingcharge += shippingprice($val);
-                } else {
-                    $shippingcharge = ShippingPrice::calculateShipping($val);
-                    $shippingcharge += shippingprice($val);
-                }
-             }
-
-            }
-//            return $total;
+//            return $shippingcharge;
 
 
             $genrals_settings = Genral::first();
@@ -218,24 +224,25 @@ class CheckoutController extends Controller
 
             foreach ($cart_table as $carts) {
                 $min = $carts->qty;
-                $id = $carts->variant_id;
-                $pros = $carts->variant;
-                $max = 0;
+//                $id = $carts->variant_id;
+//                $pros = $carts->variant;
+//                $max = 0;
+//
+//                if (isset($pros)) {
+//                    if ($pros->max_order_qty == null) {
+//                        $max = $pros->stock;
+//                    } else {
+//                        $max = $pros->max_order_qty;
+//                    }
+//
+//                    if ($max >= $min) {
+//
+//                    } else {
+//                        notify()->error(__('Sorry the product is out of stock !'));
+//                        return back();
+//                    }
+//                }
 
-                if (isset($pros)) {
-                    if ($pros->max_order_qty == null) {
-                        $max = $pros->stock;
-                    } else {
-                        $max = $pros->max_order_qty;
-                    }
-
-                    if ($max >= $min) {
-
-                    } else {
-                        notify()->error(__('Sorry the product is out of stock !'));
-                        return back();
-                    }
-                }
                 if (isset($cart->simple_product)) {
 
                     if ($cart->simple_product->max_order_qty == null) {
@@ -262,7 +269,7 @@ class CheckoutController extends Controller
             $user = auth()->user();
 
             $shipping = BillingAddress::where('user_id', $user->id)->first();
-
+//return $shipping;
             if ($request->shipping != "") {
                 $descript = $request->shipping;
             } else {
@@ -283,11 +290,10 @@ class CheckoutController extends Controller
 
 
             $shippingcharge = 0;
-
+//return $shippingcharge;
             foreach ($cart_table as $key => $cart) {
-
+//return $cart->product->free_shipping;
                 if ($cart->product && $cart->product->free_shipping == 0) {
-
                     $free_shipping = $cart->product->shippingmethod;
 
                     if (!empty($free_shipping)) {
@@ -350,6 +356,7 @@ class CheckoutController extends Controller
                             }
 
                         } else {
+//                            return 'sarowar';
                             $x = $free_shipping->price;
                             if ($free_shipping->whole_order == 1) {
                                 $shippingcharge = $free_shipping->price;
@@ -364,25 +371,37 @@ class CheckoutController extends Controller
                 }
 
                 if ($cart->simple_product) {
-
+//return 'simple';
                     if (get_default_shipping() && get_default_shipping()->whole_order == 1) {
+//                        return 'whole';
                         $shippingcharge = shippingprice($cart);
+//                        return (float)$shippingcharge;
+                        $cart->shipping = (float) $shippingcharge;
+                        $cart->save();
                     } else {
+//                        return 'sarowar';
                         $shippingcharge = $shippingcharge + shippingprice($cart);
+//                        return (float)$shippingcharge;
+                        $cart->shipping = (float) $shippingcharge;
+                        $cart->save();
                     }
+//                    return $shippingcharge;
 
                 }
+//                return 'sarowar';
 
             }
 
             $cartamountsetting = Genral::first();
-
+//            return $conversion_rate;
+//return $cartamountsetting->cart_amount;
             if ($cartamountsetting->cart_amount != 0 && $cartamountsetting->cart_amount != '') {
                 
                 if ($total * $conversion_rate >= $cartamountsetting->cart_amount * $conversion_rate) {
                     $shippingcharge = 0;
                 }
             }
+//            return $shippingcharge;
 
             Session::put('shippingcharge', $shippingcharge);
 
@@ -394,7 +413,7 @@ class CheckoutController extends Controller
 
 //            $country = Allcountry::join('countries', 'countries.country', '=', 'allcountry.iso3')->select('allcountry.*')->get();
             $divisions=Division::all();
-
+//return $divisions;
             return view('frontend.checkout', compact( 'divisions','addresses', 'conversion_rate', 'grandtotal', 'user', 'total', 'shipping', 'shippingcharge'));
 
         }
@@ -406,7 +425,7 @@ class CheckoutController extends Controller
 
     public function add(Request $request)
     {
-//        return $request;
+//        return 'sarowar';
 
         require_once 'price.php';
 
@@ -417,8 +436,10 @@ class CheckoutController extends Controller
         $getaddress = Address::find($addrid);
         $payable=sprintf('%.2f',Session::get('bil_total')) ;
         $useraddress=Address::where('user_id',$user->id)->where('defaddress',1)->first();
+
+
 //        dd($addr);
-//        return $useraddress;
+//        return $getaddress;
         $sameship=1;
 //        $test= $getaddress->union_id;
 //        return $useraddress?$useraddress->name:$getaddress->name;
@@ -639,7 +660,7 @@ class CheckoutController extends Controller
 //        }
 
         $sentfromlastpage = 0;
-        notify()->success(__('Billing address updated successfully !'));
+//        notify()->success(__('Billing address updated successfully Now you can process to payment!'));
 
         return redirect(route('order.review'));
         // return view('front.checkout', compact('conversion_rate', 'sentfromlastpage'));
@@ -658,8 +679,11 @@ class CheckoutController extends Controller
         $shipping_coupan_status = ShippingCoupan::first()->status;
 
         $handling_charge = HandlingCharge::get();
+//        return $handling_charge;
 
         $count_handling_charge = HandlingCharge::where('Type_of_charge',HandlingCharge::_GLOBAL)->count();
+//        return $count_handling_charge;
+
         $handling_amount =null;
         if(!empty($handling_charge[0])){
             if(count($handling_charge) ==$count_handling_charge){
@@ -718,13 +742,15 @@ class CheckoutController extends Controller
 
        
       $selectedaddress = Address::find(Session::get('address'));
-//      return $selectedaddress->district_id;
+//      return $selectedaddress;
 
      /**
       * shipping charge feature add
       */
      $shippingChage = null;
      $shippingAddress = ShippingCharge::where("city_id",$selectedaddress->district_id? $selectedaddress->district_id:'')->first();
+//     return $shippingAddress;
+
      if($shippingAddress){
          if($shippingAddress->Type_of_charge =="global"){
             $shippingChage =$shippingAddress->global_price;
@@ -738,25 +764,26 @@ class CheckoutController extends Controller
         /** Cart Shipping Changes */
 
         $count = collect();
-//        return $count;
+//        return $cart_table;
 
         $cart_table->each(function ($cart) use ($count) {
-
+//return 'sss';
            if($cart->active_cart == 1){ 
 
-            if ($cart->ship_type != 'localpickup' && $cart->variant && $cart->product) {
-
-                $cart->shipping = (float) ShippingPrice::calculateShipping($cart);
-                $cart->save();
-
-            }
+//            if ($cart->ship_type != 'localpickup' && $cart->variant && $cart->product) {
+//
+//                $cart->shipping = (float) ShippingPrice::calculateShipping($cart);
+//                $cart->save();
+//
+//            }
 
             if ($cart->ship_type != 'localpickup' && $cart->simple_product) {
-
+//return "ship";
                 $cart->shipping = (float) shippingprice($cart);
                 $cart->save();
 
             }
+//            return 'sarowar';
 
             if (get_default_shipping()->whole_order == 1) {
 
@@ -779,21 +806,19 @@ class CheckoutController extends Controller
 
         });
 
-
         if(count($count)){
-           
             $cart_table->each(function($cart) use ($count) {
 
                 if($cart->active_cart == 1){ 
 
                 if (get_default_shipping()->whole_order == 1) {
     
-                    if ($cart->ship_type != 'localpickup' && $cart->variant && $cart->product) {
-    
-                        $cart->shipping = (float) ShippingPrice::calculateShipping($cart) / $count->count();
-                        $cart->save();
-        
-                    }
+//                    if ($cart->ship_type != 'localpickup' && $cart->variant && $cart->product) {
+//
+//                        $cart->shipping = (float) ShippingPrice::calculateShipping($cart) / $count->count();
+//                        $cart->save();
+//
+//                    }
         
                     if ($cart->ship_type != 'localpickup' && $cart->simple_product) {
         
@@ -809,17 +834,17 @@ class CheckoutController extends Controller
 
         $ctotal = 0;
         // Update Shipping process
-
+        $shippingcharge =Session::get('shippingcharge');
             foreach ($cart_table as $key => $crt) {
                 if($crt->active_cart == 1){ 
-                if($crt->semi_total != 0){
-                    $ctotal += $crt->semi_total+$crt->shipping;
-                }else{
-                    $ctotal += $crt->price_total+$crt->shipping;
+                    if($crt->semi_total != 0){
+                        $ctotal += $crt->semi_total+$crt->shipping;
+                    }else{
+                        $ctotal += $crt->price_total+$crt->shipping;
+                    }
                 }
-            } 
             }
-
+//return $ctotal;
             if(isset($ctotal)){
 
                 $genrals_settings = Genral::first();
@@ -835,7 +860,8 @@ class CheckoutController extends Controller
                 }
 
             }
-            $shippingcharge =$shippingChage;
+            $shippingcharge =Session::get('shippingcharge');
+//            return $shippingcharge;
             $divisions=Division::all();
 //        dd($genrals_settings);
         // End

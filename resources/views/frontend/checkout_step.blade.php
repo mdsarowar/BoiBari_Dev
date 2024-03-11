@@ -528,11 +528,11 @@
 
                                             if ($val->semi_total != 0) {
 
-                                            $price = $val->semi_total - $val->tax_amount;
+                                            $price = $val->semi_total + $val->shipping - $val->tax_amount;
 
                                             } else {
 
-                                            $price = $val->price_total - $val->tax_amount;
+                                            $price = $val->price_total + $val->shipping - $val->tax_amount;
 
 
 
@@ -2657,6 +2657,7 @@
                                 <td style="width: 70%;">{{__('Subtotal')}}</td>
                                 @php
                                     $total = '0';
+                                    $shipping_total='0';
                                     foreach ($cart_table as $key => $val) {
 
                                         if($val->active_cart == 1){
@@ -2703,15 +2704,18 @@
                                             if ($val->semi_total != 0) {
 
                                                 $price = $val->semi_total - $val->tax_amount;
+                                                $shipping=$val->shipping;
 
                                             } else {
 
                                                 $price = $val->price_total - $val->tax_amount;
+                                                $shipping=$val->shipping;
 
                                             }
                                         }
 
                                         $total = $total + $price;
+                                        $shipping_total=$shipping_total+ $shipping;
 
                                         }
 
@@ -2741,8 +2745,8 @@
                             <tr>
                                 <td style="width: 70%;">{{__('Shipping')}}</td>
                                 <td>
-                                    @if($shippingChage)
-                                        <i class="{{session()->get('currency')['value']}}"></i> {{$shippingChage}}
+                                    @if($shipping_total)
+                                        <i class="{{session()->get('currency')['value']}}"></i> {{$shipping_total}}
                                     @else
                                         Free
                                     @endif
@@ -2782,8 +2786,10 @@
                                     @php
                                         $secure_pay =0;
                                         $total = sprintf("%.2f",$total*$conversion_rate);
-                                        $totals = sprintf("%.2f",$total_shipping*$conversion_rate);
-                                        $secure_pay = sprintf("%.2f",$totals + $total + $total_tax_amount + $shippingChage ?? $shippingChage);
+                                        $totals = sprintf("%.2f",$shipping_total*$conversion_rate);
+//                                        $totals = sprintf("%.2f",$total_shipping*$conversion_rate);
+//                                        $secure_pay = sprintf("%.2f",$totals + $total + $total_tax_amount + $shippingChage ?? $shippingChage);
+                                        $secure_pay = sprintf("%.2f",$totals + $total + $total_tax_amount );
 
                                         if(App\Cart::isCoupanApplied() == '1'){
                                         $secure_pay = sprintf("%.2f",$secure_pay - App\Cart::getDiscount()*$conversion_rate);
