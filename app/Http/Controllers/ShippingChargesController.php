@@ -22,12 +22,13 @@ class ShippingChargesController extends Controller
     }
 
     public function create(){
-        $records = Allcity::orderBy('name', 'ASC')->take(10)->get();
+        $records = Allcity::orderBy('name', 'ASC')->get();
         $global =ShippingCharge::first();
         return view('admin.shipping_charges.create',compact('records','global'));
     }
 
     public function store(Request $request){
+//        return $request;
         $global =ShippingCharge::first();
         $create = new ShippingCharge();
         $create->city_id = $request->city_name;

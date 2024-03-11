@@ -212,27 +212,7 @@ $("#footer-payment-slider").owlCarousel({
 
 $("#topseler-slider").owlCarousel({
 
-//     rtl:true,
-//     loop:true,
-//     items: 5,
-//     margin:10,
-//     nav:true,
-//     dots:false,
 
-//     navText: [ '<i class="position-absolute top-50 start-100 translate-middle "  data-feather="chevron-right"></i>','<i class="position-absolute top-50 start-0 translate-middle" data-feather="chevron-left"></i>'],
-//     // navText: [ '<button type="button" class="position-absolute top-50 start-100 translate-middle btn btn-primary btn-sm"><i class=" "  data-feather="chevron-right"></i></button>','<i class="position-absolute top-50 start-0 translate-middle" data-feather="chevron-left"></i>'],
-//     // navText: [   '<div class="position-absolute top-50 start-100 translate-middle"><i data-feather="chevron-right"></i></div>', '<div class="owl-next">next</div>'],
-//     responsive:{
-//         0:{
-//             items:1
-//         },
-//         600:{
-//             items:3
-//         },
-//         1000:{
-//             items:5
-//         }
-//     }
 
     loop: true,
     items: 5,
@@ -344,7 +324,7 @@ $("#bcs-book-slider").owlCarousel({
     autoHeight: false,
     touchDrag: true,
     mouseDrag: true,
-    margin: 20,
+    margin: 10,
     autoplay: true,
     lazyLoad:true,
     slideSpeed: 600,

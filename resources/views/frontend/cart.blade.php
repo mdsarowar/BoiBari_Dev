@@ -1,6 +1,6 @@
 @extends("frontend.layout.master")
 @section('title','BoiBari | Cart')
-@section("content")   
+@section("content")
 <div style="background-color: #fff8f5">
 
     <!-- Home Start -->
@@ -1424,7 +1424,7 @@
   }
 
   function checkuncheckproduct(id){
-    
+
     var checkproduct = $('#selectproduct'+id).val();
 
     if(checkproduct == 1){
@@ -1441,7 +1441,7 @@
     }
     else{
       var total_amount = parseFloat(grand_total) - parseFloat(subtotal);
-    }  
+    }
     if(total_amount<=0){
       $("#gtotal").text(0);
       $("#proccedtocheckout").prop('disabled', true);
@@ -1449,9 +1449,9 @@
       $("#proccedtocheckout").prop('disabled', false);
       $("#gtotal").text(total_amount.toFixed(2));
     }
-    
+
     var updatecart = '{{ url('/UpdateCart') }}';
-    
+
     $.ajax({
       headers: {
         "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
@@ -1461,11 +1461,11 @@
       data : { cartstatus :activecart, cart_id :id },
       success: function (response) {
 
-       
+
 
         if (response == 1) {
           console.log("Success");
-         
+
         } else {
           console.log("Fail");
         }
@@ -1558,6 +1558,6 @@
   $('.giftCart').on('click',function(){
     $('.giftcardform').toggle();
   })
-   
+
 </script>
 @endsection

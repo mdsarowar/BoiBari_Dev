@@ -82,6 +82,7 @@ class ProductController extends Controller
 
     public function storeSpecs(Request $request, $id)
     {
+        return $request;
 
         abort_if(!auth()->user()->can('products.create'), 403, __('User does not have the right permissions.'));
 
