@@ -212,33 +212,30 @@ $("#footer-payment-slider").owlCarousel({
 
 $("#topseler-slider").owlCarousel({
 
-    rtl:true,
-    loop:true,
-    items: 6,
-    margin:20,
-    nav:true,
-    dots:false,
+//     rtl:true,
+//     loop:true,
+//     items: 5,
+//     margin:10,
+//     nav:true,
+//     dots:false,
 
-    navText: [ '<i class="position-absolute top-50 start-100 translate-middle "  data-feather="chevron-right"></i>','<i class="position-absolute top-50 start-0 translate-middle" data-feather="chevron-left"></i>'],
-    // navText: [ '<button type="button" class="position-absolute top-50 start-100 translate-middle btn btn-primary btn-sm"><i class=" "  data-feather="chevron-right"></i></button>','<i class="position-absolute top-50 start-0 translate-middle" data-feather="chevron-left"></i>'],
-    // navText: [   '<div class="position-absolute top-50 start-100 translate-middle"><i data-feather="chevron-right"></i></div>', '<div class="owl-next">next</div>'],
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:6
-        }
-    }
-});
+//     navText: [ '<i class="position-absolute top-50 start-100 translate-middle "  data-feather="chevron-right"></i>','<i class="position-absolute top-50 start-0 translate-middle" data-feather="chevron-left"></i>'],
+//     // navText: [ '<button type="button" class="position-absolute top-50 start-100 translate-middle btn btn-primary btn-sm"><i class=" "  data-feather="chevron-right"></i></button>','<i class="position-absolute top-50 start-0 translate-middle" data-feather="chevron-left"></i>'],
+//     // navText: [   '<div class="position-absolute top-50 start-100 translate-middle"><i data-feather="chevron-right"></i></div>', '<div class="owl-next">next</div>'],
+//     responsive:{
+//         0:{
+//             items:1
+//         },
+//         600:{
+//             items:3
+//         },
+//         1000:{
+//             items:5
+//         }
+//     }
 
-/* ========== Feature Brand Slider =========== */
-$("#featured-brand-slider").owlCarousel({
     loop: true,
-    items: 6,
+    items: 5,
     dots: false,
     nav: false,
     autoplayTimeout: 10000,
@@ -273,12 +270,63 @@ $("#featured-brand-slider").owlCarousel({
             dots: false,
         },
         992: {
-            items: 6,
+            items: 5,
             nav: false,
             dots: false,
         },
         1000: {
-            items: 6,
+            items: 5,
+            nav: false,
+            dots: false,
+        }
+    }
+});
+
+
+/* ========== Feature Brand Slider =========== */
+$("#featured-brand-slider").owlCarousel({
+    loop: true,
+    items: 5,
+    dots: false,
+    nav: false,
+    autoplayTimeout: 10000,
+    smartSpeed: 2000,
+    autoHeight: false,
+    touchDrag: true,
+    mouseDrag: true,
+    margin: 30,
+    autoplay: true,
+    lazyLoad:true,
+    slideSpeed: 600,
+    navText: ['<i data-feather="arrow-left"></i>', '<i data-feather="arrow-right"></i>'],
+    responsive: {
+        0: {
+            items: 2,
+            nav: false,
+            dots: false,
+        },
+        400: {
+            items: 2,
+            nav: false,
+            dots: false,
+        },
+        600: {
+            items: 3,
+            nav: false,
+            dots: false,
+        },
+        768: {
+            items: 3,
+            nav: false,
+            dots: false,
+        },
+        992: {
+            items: 5,
+            nav: false,
+            dots: false,
+        },
+        1000: {
+            items: 5,
             nav: false,
             dots: false,
         }
