@@ -95,6 +95,8 @@
             </div>
 
             <h3 class="deals-dtl-title">{{$product->product_name}} </h3>
+            <h5 class="deals-dtl-title">{{$product->product_tags}} </h5>
+
             @if($product->selling_start_at <= date("Y-m-d H:i:s"))
             @else
               <h3 class="text-warning">{{ __('ComingSoon') }}</h3>

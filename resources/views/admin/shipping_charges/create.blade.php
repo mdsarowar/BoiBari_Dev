@@ -51,20 +51,20 @@
                                     </div>
                                 </div>
 
-                                {{--<div class="col-md-4">--}}
-                                    {{--<div class="form-group">--}}
-                                        {{--<label class="control-label mb-1" for="first-name">--}}
-                                            {{--{{__('Shipping Charge Type')}}:--}}
-                                        {{--</label>--}}
+                          <div class="col-md-4">
+                                   <div class="form-group">
+                                        <label class="control-label mb-1" for="first-name">
+                                           {{__('Shipping Charge Type')}}:
+                                        </label>
 
-                                        {{--<select class="form-control form-select-lg shipping_charge_type" aria-label=".form-select-lg example" name="shipping_charge_type" >--}}
-                                            {{--<option selected>Please select </option>--}}
-                                            {{--<option value="global">Default</option>--}}
-                                            {{--<option value="custom">Custom</option>--}}
+                                        <select class="form-control form-select-lg shipping_charge_type" aria-label=".form-select-lg example" name="shipping_charge_type" >
+                                            <option selected>Please select </option>
+                                            <option value="global">Default</option>
+                                           <option value="custom">Custom</option>
 
-                                        {{--</select>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
+                                        </select>
+                                   </div>
+                                </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label" for="first-name">
@@ -92,27 +92,27 @@
             </div>
         </div>
     </div>
-    {{--<script>--}}
-        {{--$('.shipping_charge_type').on('change',function(){--}}
-            {{--console.log();--}}
-            {{--if($(this).val() =='global'){--}}
-                {{--$('.set_global_price').show();--}}
-                {{--if(`{{@$global->global_price}}`){--}}
-                    {{--$('.shipping_price').val(`{{@$global->global_price}}`)--}}
-                {{--}else{--}}
-                    {{--$('.shipping_price').val(10)--}}
-                {{--}--}}
-                {{--$('.shipping_price').attr("disabled", 'disabled');--}}
-            {{--}else{--}}
-                {{--$('.set_global_price').hide();--}}
-                {{--$('.shipping_price').val('');--}}
-                {{--$('.shipping_price').prop("disabled", false);--}}
-            {{--}--}}
-        {{--})--}}
-        {{--$('.set_global_price').on('click',function(){--}}
-            {{--$('.shipping_price').prop("disabled", false)--}}
-        {{--})--}}
-    {{--</script>--}}
+    <script>
+        $('.shipping_charge_type').on('change',function(){
+           console.log();
+           if($(this).val() =='global'){
+               $('.set_global_price').show();
+                if(`{{@$global->global_price}}`){
+                   $('.shipping_price').val(`{{@$global->global_price}}`)
+               }else{
+                    $('.shipping_price').val(10)
+                }
+                $('.shipping_price').attr("disabled", 'disabled');
+            }else{
+              $('.set_global_price').hide();
+              $('.shipping_price').val('');
+              $('.shipping_price').prop("disabled", false);
+            }
+      })
+        $('.set_global_price').on('click',function(){
+            $('.shipping_price').prop("disabled", false)
+        })
+    </script>
 
 
 

@@ -203,7 +203,7 @@ $banner = App\BannerSetting::first();
                                             <li class="nav-item">
                                                 <a class="nav-link dropdown-toggle text-dark" href="#" data-bs-toggle="dropdown" title="{{__('Categories')}}"><i data-feather="award"></i>{{__('All Categories')}}</a>
                                                 <ul class="dropdown-menu">
-                                                    @foreach(App\Category::where('status','1')->latest()->paginate(7) as $key => $cat)
+                                                    @foreach(App\Category::where('status','1')->latest()->get() as $key => $cat)
                                                         <li>
                                                             <a class="dropdown-item " href="javascript:" onclick="changeCategory({{$cat->id}},'main')" title="{{ $cat->title }}">
                                                                 {{ $cat->title }}
@@ -519,7 +519,7 @@ $banner = App\BannerSetting::first();
                             <li class="nav-item active col-md-2">
                                 <a  class="form-select text-dark " href="#" data-bs-toggle="dropdown" title="{{__('Categories')}}" >{{__('All Categories')}} </a>
                                 <ul class="dropdown-menu ">
-                                    @foreach(App\Category::where('status','1')->latest()->paginate(7) as $key => $cat)
+                                    @foreach(App\Category::where('status','1')->latest()->get() as $key => $cat)
                                         <li >
                                             <a class="dropdown-item" href="javascript:" onclick="changeCategory({{$cat->id}},'main')" title="{{ $cat->title }}">
                                                 {{ __($cat->title) }}
