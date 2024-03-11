@@ -21,6 +21,49 @@
 </div> */
 
 
+
+/* -------------Mizan Custome Css ------------------- */
+/* .featured-product-dtl a:hover{
+    color: orangered !important;
+} */
+.featured_custom_cart{
+    border: 1px solid orangered;
+    background-color: darkorange;
+    color: white;
+    padding: 5px;
+    margin-top: 7px;
+    border-radius: 20px;
+}
+.featured_custom_cart a{
+    color: white;
+}
+/* .featured_custom_cart a:hover{
+    color: black;
+} */
+.featured_custom_cart:hover {
+    border: 1px solid orangered;
+    background-color: white;
+    color: black;
+    transition: all 0.5s ease;
+    font: 700;
+}
+.featured_custom_cart:hover a{
+    color: black;
+}
+.featured-product-badge .badge {
+    background-color: darkorange !important;
+    font-size: 13px;
+    border: 1px solid darkorange;
+    border-radius: 20px !important;
+}
+.featured-brand-block:hover {
+    border: 1px solid orangered;
+}
+/* -------------Mizan Custome Css ------------------- */
+
+
+
+
 #navbar {
 	position: fixed;
 	width: 100%;
@@ -815,11 +858,11 @@ select option {
     border-bottom: 1px solid #E7EAEF;
 }
 .topbar-main-block .logo {
-    border-right: 1px solid #E7EAEF;
+    border-right: 0;
     padding: 9px 0;
 }
 .topbar-search-product {
-    border-right: 1px solid #E7EAEF;
+    border-right: 0;
     padding: 8px 0;
 }
 .topbar-search-product form {
@@ -848,11 +891,12 @@ select option {
 .custome_update{
     width: 100px;
 }
-.custome_search_section{
-    border: 1px solid rgb(238, 237, 237);
-    border-radius: 50px;
+.custome_search_section {
+    border: 1px solid rgb(211 16 70);
+    /* border-radius: 50px; */
     /* display: inherit; */
-    }
+}
+
 .search-form .form-group {
     width: 75%;
     /* border-left: 1px solid #E7EAEF; */
@@ -2200,10 +2244,10 @@ select option {
     right: 0;
 }
 .featured-product-badge .badge {
-    background-color: var(--bg-dark-blue-color) !important;
+    /* background-color: var(--bg-dark-blue-color) !important; */
     border-radius: 0;
     padding: 6px;
-    font-size: 10px;
+    /* font-size: 10px; */
     font-weight: 500;
 }
 .featured-product-dtl {
@@ -3363,7 +3407,7 @@ select option {
     padding: 10px;
 }
 .featured-brand-block:hover {
-    border: 1px solid var(--border-dark-blue-color);
+    /* border: 1px solid var(--border-dark-blue-color); */
     -webkit-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;

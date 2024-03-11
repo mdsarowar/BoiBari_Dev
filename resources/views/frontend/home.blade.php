@@ -291,51 +291,19 @@
                                                                     {{__($featured_pro->author_id?$featured_pro->author->title:'')}}
                                                                 </p>
                                                             </div>
-                                                            {{--                                                    <div class="col-lg-5">--}}
-                                                            {{--                                                        <div class="featured-product-price">--}}
-                                                            {{--                                                            <i class="{{ session()->get('currency')?session()->get('currency')['value']:'' }}"></i>--}}
-                                                            {{--                                                            {{ $featured_pro->offer_price != 0 && $featured_pro->offer_price != '' ? price_format($featured_pro->offer_price) :  price_format($featured_pro->price)  }}--}}
-                                                            {{--                                                        </div>--}}
-                                                            {{--                                                    </div>--}}
                                                         </div>
-                                                        <div class="row">
-                                                            {{--                                                    <div class="col-lg-12">--}}
-                                                            <div class="col-md-8  text-start">
-                                                                {{--                                                            <div class="col-lg-4">--}}
-                                                                <div class="featured-product-price text-start fs-6 ">
+
+                        <!-- -------------------- Change Mizan--------------------- -->
+
+                                                        <div class="col-md-12  text-center">
+                                                                <div class="featured-product-price text-center fs-6 ">
                                                                     <i class="{{ session()->get('currency')?session()->get('currency')['value']:'' }}"></i>
-                                                                    {{ $featured_pro->offer_price != 0 && $featured_pro->offer_price != '' ? price_format($featured_pro->offer_price) :  price_format($featured_pro->price)  }}
+                                                                   <!-- <s>{{ $featured_pro->price != 0 && $featured_pro->price != '' ? price_format($featured_pro->price) :  price_format($featured_pro->price)  }}</s>  -->
+                                                                   {{ $featured_pro->offer_price != 0 && $featured_pro->offer_price != '' ? price_format($featured_pro->offer_price) :  price_format($featured_pro->price)  }}
                                                                 </div>
-                                                                {{--                                                            </div>--}}
-
-                                                                {{--                                                            <div class="col-lg-4">--}}
-                                                                {{--                                                                @if($featured_pro->offer_price != 0)--}}
-                                                                {{--                                                                    @php--}}
-                                                                {{--                                                                        $conversion_rate = 1;--}}
-                                                                {{--                                                                        $getdisprice = ($featured_pro->price*$conversion_rate) - ($featured_pro->offer_price * $conversion_rate);--}}
-                                                                {{--                                                                        $gotdis = $getdisprice/($featured_pro->price * $conversion_rate);--}}
-                                                                {{--                                                                        $offamount = round($gotdis*100);--}}
-                                                                {{--                                                                    @endphp--}}
-                                                                {{--                                                                    <span class="badge text-bg-warning">{{ $offamount }}% {{__("off")}}</span>--}}
-                                                                {{--                                                                @endif--}}
-                                                                {{--                                                            </div>--}}
-
                                                             </div>
-                                                            {{--                                                        <div class="col-lg-4 text-center">--}}
-                                                            {{--                                                            @if($featured_pro->offer_price != 0)--}}
-                                                            {{--                                                                @php--}}
-                                                            {{--                                                                    $conversion_rate = 1;--}}
-                                                            {{--                                                                    $getdisprice = ($featured_pro->price*$conversion_rate) - ($featured_pro->offer_price * $conversion_rate);--}}
-                                                            {{--                                                                    $gotdis = $getdisprice/($featured_pro->price * $conversion_rate);--}}
-                                                            {{--                                                                    $offamount = round($gotdis*100);--}}
-
-                                                            {{--                                                                @endphp--}}
-                                                            {{--                                                                <span class="badge text-bg-warning">{{ $offamount }}% {{__("off")}}</span>--}}
-                                                            {{--                                                            @endif--}}
-                                                            {{--                                                        </div>--}}
-                                                            <div class="col-md-4 text-end ">
-                                                                {{--                                                            <div class="row">--}}
-                                                                {{--                                                                <div class="col-lg-6">--}}
+                                                        <div class="row">
+                                                            <div class="col-md-12 text-center featured_custom_cart">
                                                                 <form method="POST"
                                                                       action="{{ $featured_pro->type == 'ex_product' ? $featured_pro->external_product_link : route('add.cart.simple',['pro_id' => $featured_pro->id, 'price' => $featured_pro->price, 'offerprice' => $featured_pro->offer_price]) }}"
                                                                       class="addSimpleCardFrom{{$featured_pro->id}}">
@@ -349,15 +317,14 @@
                                                                     <a href="javascript:"
                                                                        onclick="addSimpleProCard({{$featured_pro->id}})"
                                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                                       data-bs-title="{{__('Add To Cart')}}"><i
+                                                                       data-bs-title="{{__('Add To Cart')}}"> Add to Cart <i
                                                                                 data-feather="shopping-cart"></i></a>
 
                                                                 </form>
-                                                                {{--                                                                </div>--}}
-                                                                {{--                                                            </div>--}}
                                                             </div>
-                                                            {{--                                                    </div>--}}
                                                         </div>
+                        <!-- -------------------- Change Mizan--------------------- -->
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -623,72 +590,7 @@
                                                                      style="height: 200px">
                                                             @endif
                                                         </a>
-                                                        {{--                                                <div class="featured-product-icon">--}}
-                                                        {{--                                                    <ul>--}}
-                                                        {{--                                                        <li>--}}
-                                                        {{--                                                            <a href="{{ route('show.product',['id' => $featured_pro->id, 'slug' => $featured_pro->slug]) }}"--}}
-                                                        {{--                                                               data-bs-toggle="tooltip" data-bs-placement="left"--}}
-                                                        {{--                                                               data-bs-title="{{__('View')}}"><i--}}
-                                                        {{--                                                                        data-feather="eye"></i></a></li>--}}
-                                                        {{--                                                        @auth--}}
-
-                                                        {{--                                                            @if($featured_pro->type != 'ex_product')--}}
-
-                                                        {{--                                                                @if(inwishlist($featured_pro->id))--}}
-                                                        {{--                                                                    <li>--}}
-                                                        {{--                                                                        <a class="add_in_wish_simple add-wishlist"--}}
-                                                        {{--                                                                           data-proid="{{ $featured_pro->id }}"--}}
-                                                        {{--                                                                           data-bs-status="{{ inwishlist($featured_pro->id) }}"--}}
-                                                        {{--                                                                           data-bs-toggle="tooltip"--}}
-                                                        {{--                                                                           data-bs-placement="left"--}}
-                                                        {{--                                                                           data-bs-title="{{__('Wishlist')}}"--}}
-                                                        {{--                                                                           href="javascript:void(0)">--}}
-                                                        {{--                                                                            <i data-feather="heart"></i>--}}
-                                                        {{--                                                                        </a>--}}
-                                                        {{--                                                                    </li>--}}
-                                                        {{--                                                                @else--}}
-                                                        {{--                                                                    <li>--}}
-                                                        {{--                                                                        <a class="add_in_wish_simple"--}}
-                                                        {{--                                                                           data-proid="{{ $featured_pro->id }}"--}}
-                                                        {{--                                                                           data-bs-status="{{ inwishlist($featured_pro->id) }}"--}}
-                                                        {{--                                                                           data-bs-toggle="tooltip"--}}
-                                                        {{--                                                                           data-bs-placement="left"--}}
-                                                        {{--                                                                           data-bs-title="{{__('Wishlist')}}"--}}
-                                                        {{--                                                                           href="javascript:void(0)">--}}
-                                                        {{--                                                                            <i data-feather="heart"></i>--}}
-                                                        {{--                                                                        </a>--}}
-                                                        {{--                                                                    </li>--}}
-                                                        {{--                                                                @endif--}}
-
-                                                        {{--                                                            @endif--}}
-
-                                                        {{--                                                        @endauth--}}
-                                                        {{--                                                        <li>--}}
-                                                        {{--                                                            <form method="POST"--}}
-                                                        {{--                                                                  action="{{ $featured_pro->type == 'ex_product' ? $featured_pro->external_product_link : route('add.cart.simple',['pro_id' => $featured_pro->id, 'price' => $featured_pro->price, 'offerprice' => $featured_pro->offer_price]) }}"--}}
-                                                        {{--                                                                  class="addSimpleCardFrom{{$featured_pro->id}}">--}}
-                                                        {{--                                                                @csrf--}}
-
-                                                        {{--                                                                <input name="qty" type="hidden"--}}
-                                                        {{--                                                                       value="{{ $featured_pro->min_order_qty }}"--}}
-                                                        {{--                                                                       max="{{ $featured_pro->max_order_qty }}"--}}
-                                                        {{--                                                                       class="qty-section">--}}
-
-                                                        {{--                                                                <a href="javascript:"--}}
-                                                        {{--                                                                   onclick="addSimpleProCard({{$featured_pro->id}})"--}}
-                                                        {{--                                                                   data-bs-toggle="tooltip" data-bs-placement="left"--}}
-                                                        {{--                                                                   data-bs-title="{{__('Add To Cart')}}"><i--}}
-                                                        {{--                                                                            data-feather="shopping-cart"></i></a>--}}
-
-                                                        {{--                                                            </form>--}}
-                                                        {{--                                                        </li>--}}
-                                                        {{--                                                        <li>--}}
-                                                        {{--                                                            <a href="{{ route('compare.product',$featured_pro->id) }}"--}}
-                                                        {{--                                                               data-bs-toggle="tooltip" data-bs-placement="left"--}}
-                                                        {{--                                                               data-bs-title="Compare"><i data-feather="anchor"></i></a>--}}
-                                                        {{--                                                        </li>--}}
-                                                        {{--                                                    </ul>--}}
-                                                        {{--                                                </div>--}}
+                                                        
                                                         <div class="featured-product-badge">
                                                             @if($featured_pro->offer_price != 0)
                                                                 @php
@@ -702,6 +604,7 @@
                                                             @endif
                                                         </div>
                                                     </div>
+                                                    <!-- -------------- Change Mizan---------------- -->
                                                     <div class="featured-product-dtl">
                                                         <div class="row">
                                                             <div class="col-lg-12">
@@ -713,74 +616,35 @@
                                                                     {{__($featured_pro->author_id?$featured_pro->author->title:'')}}
                                                                 </p>
                                                             </div>
-                                                            {{--                                                    <div class="col-lg-5">--}}
-                                                            {{--                                                        <div class="featured-product-price">--}}
-                                                            {{--                                                            <i class="{{ session()->get('currency')?session()->get('currency')['value']:'' }}"></i>--}}
-                                                            {{--                                                            {{ $featured_pro->offer_price != 0 && $featured_pro->offer_price != '' ? price_format($featured_pro->offer_price) :  price_format($featured_pro->price)  }}--}}
-                                                            {{--                                                        </div>--}}
-                                                            {{--                                                    </div>--}}
+                                                          
+                                                        </div>
+                                                        <div class="col-md-12  text-center">
+                                                            <div class="featured-product-price text-center fs-6 ">
+                                                                <i class="{{ session()->get('currency')?session()->get('currency')['value']:'' }}"></i>
+                                                                {{ $featured_pro->offer_price != 0 && $featured_pro->offer_price != '' ? price_format($featured_pro->offer_price) :  price_format($featured_pro->price)  }}
+                                                            </div>
                                                         </div>
                                                         <div class="row">
-                                                            {{--                                                    <div class="col-lg-12">--}}
-                                                            <div class="col-md-8  text-start">
-                                                                {{--                                                            <div class="col-lg-4">--}}
-                                                                <div class="featured-product-price text-start fs-6 ">
-                                                                    <i class="{{ session()->get('currency')?session()->get('currency')['value']:'' }}"></i>
-                                                                    {{ $featured_pro->offer_price != 0 && $featured_pro->offer_price != '' ? price_format($featured_pro->offer_price) :  price_format($featured_pro->price)  }}
-                                                                </div>
-                                                                {{--                                                            </div>--}}
-
-                                                                {{--                                                            <div class="col-lg-4">--}}
-                                                                {{--                                                                @if($featured_pro->offer_price != 0)--}}
-                                                                {{--                                                                    @php--}}
-                                                                {{--                                                                        $conversion_rate = 1;--}}
-                                                                {{--                                                                        $getdisprice = ($featured_pro->price*$conversion_rate) - ($featured_pro->offer_price * $conversion_rate);--}}
-                                                                {{--                                                                        $gotdis = $getdisprice/($featured_pro->price * $conversion_rate);--}}
-                                                                {{--                                                                        $offamount = round($gotdis*100);--}}
-                                                                {{--                                                                    @endphp--}}
-                                                                {{--                                                                    <span class="badge text-bg-warning">{{ $offamount }}% {{__("off")}}</span>--}}
-                                                                {{--                                                                @endif--}}
-                                                                {{--                                                            </div>--}}
-
-                                                            </div>
-                                                            {{--                                                        <div class="col-lg-4 text-center">--}}
-                                                            {{--                                                            @if($featured_pro->offer_price != 0)--}}
-                                                            {{--                                                                @php--}}
-                                                            {{--                                                                    $conversion_rate = 1;--}}
-                                                            {{--                                                                    $getdisprice = ($featured_pro->price*$conversion_rate) - ($featured_pro->offer_price * $conversion_rate);--}}
-                                                            {{--                                                                    $gotdis = $getdisprice/($featured_pro->price * $conversion_rate);--}}
-                                                            {{--                                                                    $offamount = round($gotdis*100);--}}
-
-                                                            {{--                                                                @endphp--}}
-                                                            {{--                                                                <span class="badge text-bg-warning">{{ $offamount }}% {{__("off")}}</span>--}}
-                                                            {{--                                                            @endif--}}
-                                                            {{--                                                        </div>--}}
-                                                            <div class="col-md-4 text-end ">
-                                                                {{--                                                            <div class="row">--}}
-                                                                {{--                                                                <div class="col-lg-6">--}}
+                                                            <div class="col-md-12 text-center featured_custom_cart">
                                                                 <form method="POST"
                                                                       action="{{ $featured_pro->type == 'ex_product' ? $featured_pro->external_product_link : route('add.cart.simple',['pro_id' => $featured_pro->id, 'price' => $featured_pro->price, 'offerprice' => $featured_pro->offer_price]) }}"
                                                                       class="addSimpleCardFrom{{$featured_pro->id}}">
                                                                     @csrf
-
                                                                     <input name="qty" type="hidden"
                                                                            value="{{ $featured_pro->min_order_qty }}"
                                                                            max="{{ $featured_pro->max_order_qty }}"
                                                                            class="qty-section">
-
                                                                     <a href="javascript:"
                                                                        onclick="addSimpleProCard({{$featured_pro->id}})"
                                                                        data-bs-toggle="tooltip" data-bs-placement="left"
                                                                        data-bs-title="{{__('Add To Cart')}}"><i
-                                                                                data-feather="shopping-cart"></i></a>
+                                                                                data-feather="shopping-cart"></i> Add To Cart  </a>
 
                                                                 </form>
-                                                                {{--                                                                </div>--}}
-                                                                {{--                                                            </div>--}}
                                                             </div>
-                                                            {{--                                                    </div>--}}
                                                         </div>
                                                     </div>
+                                                    <!-- -------------- Change Mizan---------------- -->
                                                 </div>
                                             </div>
                                         </div>

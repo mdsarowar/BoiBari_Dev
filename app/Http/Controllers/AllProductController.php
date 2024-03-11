@@ -19,17 +19,17 @@ class AllProductController extends Controller
 //        return [$id,$pog];
         $slauthor[]=null;
         if ($pog == 'main'){
-            $products=SimpleProduct::where('status','1')->where('category_id',$id)->paginate(12);
+            $products=SimpleProduct::where('status','1')->where('category_id',$id)->get();
         }elseif ($pog == 'sub'){
-            $products=SimpleProduct::where('status','1')->where('subcategory_id',$id)->paginate(12);
+            $products=SimpleProduct::where('status','1')->where('subcategory_id',$id)->get();
         }elseif ($pog == 'child'){
-            $products=SimpleProduct::where('status','1')->where('child_id',$id)->paginate(12);
+            $products=SimpleProduct::where('status','1')->where('child_id',$id)->get();
         }elseif ($pog == 'author'){
-            $products=SimpleProduct::where('status','1')->where('author_id',$id)->paginate(12);
+            $products=SimpleProduct::where('status','1')->where('author_id',$id)->get();
         }elseif ($pog == 'publish'){
-            $products=SimpleProduct::where('status','1')->where('publisher_id',$id)->paginate(12);
+            $products=SimpleProduct::where('status','1')->where('publisher_id',$id)->get();
         }else{
-            $products=SimpleProduct::where('status','1')->paginate(12);
+            $products=SimpleProduct::where('status','1')->get();
         }
 
 //        return $author;
