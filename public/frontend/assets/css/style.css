@@ -23,6 +23,10 @@
 
 
 /* -------------Mizan Custome Css ------------------- */
+.acccordion_scroll {
+    height: 387px;
+    overflow: scroll;
+}
 /* .featured-product-dtl a:hover{
     color: orangered !important;
 } */
@@ -51,14 +55,33 @@
     color: black;
 }
 .featured-product-badge .badge {
-    background-color: darkorange !important;
+    background-color: orangered!important;
     font-size: 13px;
-    border: 1px solid darkorange;
+    border: 1px solid orangered;
     border-radius: 20px !important;
 }
 .featured-brand-block:hover {
     border: 1px solid orangered;
 }
+
+.customer-support-block {
+    background-color: orange;
+    box-shadow: 0 11px 11px 2px rgb(20 23 28 / 35%);
+}
+.customer-support-block:hover {
+    background-color: #e7eaef;
+    /* border-radius: 25px;1 */
+}
+.customer-support-block:hover .support-title{
+    color: black;
+}
+.support-title {
+    color: white;
+}
+.product-filter-main-block {
+    padding: 15px 0 45px 0;
+}
+
 /* -------------Mizan Custome Css ------------------- */
 
 
@@ -1853,7 +1876,7 @@ select option {
     padding: 50px 0;
 }
 .customer-support-block {
-    background-color: var(--bg-dark-grey-color);
+    /* background-color: var(--bg-dark-grey-color); */
     padding: 18px 12px;
     -webkit-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
@@ -1869,7 +1892,9 @@ select option {
     height: 1px;
     position: absolute;
     transition: all 0.2s linear;
-    background-color: var(--bg-dark-blue-color);
+    /* background-color: var(--bg-dark-blue-color); */
+    background-color: rgb(47, 0, 255);
+    border-radius: 20px;
 }
 .border-hover-two:before,
 .border-hover-two:after {
@@ -1878,7 +1903,9 @@ select option {
     height: 0;
     position: absolute;
     transition: all 0.2s linear;
-    background-color: var(--bg-dark-blue-color);
+    /* background-color: var(--bg-dark-blue-color); */
+    background-color: rgb(47, 0, 255);
+    border-radius: 20px;
 }
 .border-hover:hover:before,
 .border-hover:hover:after {
@@ -2189,7 +2216,7 @@ select option {
     margin-left: 5px;
 }
 .featured-product-block {
-    margin-bottom: 30px;
+    margin-bottom: 41px;
     overflow: hidden;
     -webkit-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
@@ -5454,9 +5481,9 @@ background-color: black;
     font-size: 14px;
     display: block;
 }
-.front:hover{
+/* .front:hover{
     box-shadow: 2px 2px 5px grey;
-}
+} */
 .select2-container .select2-selection--single {
     border: 1px solid #E7EAFF !important;
     padding: 15px 20px !important;
@@ -6986,14 +7013,11 @@ input.razorpay-payment-button {
 /* ================================= */
   /* ====== Product Filter ====== */
 /* ================================= */
-.acccordion_scroll{
-    height: 335px;
-    overflow: scroll;
-}
 
-.product-filter-main-block {
+
+/* .product-filter-main-block {
     padding: 100px 0;
-}
+} */
 .product-filter-main-block .featured-product-img img {
     width: 200px;
     height: 200px;

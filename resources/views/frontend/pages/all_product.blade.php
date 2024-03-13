@@ -149,8 +149,9 @@
                                                    </div>
                                                @endif
                                            </div>
+                                           <!-- ------------------ Mizan Change-------------------------- -->
                                            <div class="featured-product-dtl">
-                                               <div class="row">
+                                               <div class="row text-center">
                                                    <div class="col-xl-12 col-lg-12">
                                                        <h6 class="featured-product-title truncate">
                                                            <a href="{{ route('show.product',['id' => $product->id, 'slug' => $product->slug]) }}">
@@ -163,17 +164,16 @@
                                                    </div>
 
                                                </div>
-                                               <div class="row">
-                                                   <div class="col-md-8  text-start">
-                                                       <div class="featured-product-price text-start fs-6 ">
+                                               <div class="col-md-12  text-center">
+                                                       <div class="featured-product-price text-center fs-6 ">
                                                            <i class="{{ session()->get('currency')?session()->get('currency')['value']:'' }}"></i>
                                                            {{ $product->offer_price != 0 && $product->offer_price != '' ? price_format($product->offer_price) :  price_format($product->price)  }}
                                                            <del class="text-danger">{{ $product->offer_price != 0 && $product->offer_price != '' ? price_format($product->price) :  ''  }}</del>
                                                        </div>
 
                                                    </div>
-
-                                                   <div class="col-md-4 text-end ">
+                                               <div class="row">
+                                                   <div class="col-md-12 text-center featured_custom_cart">
                                                        <form method="POST"
                                                              action="{{ $product->type == 'ex_product' ? $product->external_product_link : route('add.cart.simple',['pro_id' => $product->id, 'price' => $product->price, 'offerprice' => $product->offer_price]) }}"
                                                              class="addSimpleCardFrom{{$product->id}}">
@@ -188,12 +188,14 @@
                                                               onclick="addSimpleProCard({{$product->id}})"
                                                               data-bs-toggle="tooltip" data-bs-placement="left"
                                                               data-bs-title="{{__('Add To Cart')}}"><i
-                                                                       data-feather="shopping-cart"></i></a>
+                                                                       data-feather="shopping-cart"></i> Add To Cart</a>
 
                                                        </form>
                                                    </div>
                                                </div>
                                            </div>
+
+                                           <!-- ------------------ Mizan Change-------------------------- -->
                                        </div>
                                    </div>
                                @endforeach
@@ -353,7 +355,7 @@
                                                @endif
                                            </div>
                                            <div class="featured-product-dtl">
-                                               <div class="row">
+                                               <div class="row ">
                                                    <div class="col-xl-12 col-lg-12 col-md-12">
                                                        <h6 class="featured-product-title truncate fw-bold">
                                                            <a href="{{ route('show.product',['id' => $product->id, 'slug' => $product->slug]) }}">
@@ -371,7 +373,7 @@
                                                    </div>
                                                </div>
                                                <div class="row">
-                                                   <div class="col-md-12  text-start">
+                                                   <div class="col-md-12  text-center">
                                                        <div class="featured-product-price text-start fs-5 ">
                                                            <i class="{{ session()->get('currency')?session()->get('currency')['value']:'' }}"></i>
                                                            {{--                                                        {{ $product->offer_price != 0 && $product->offer_price != '' ? price_format($product->offer_price) :  price_format($product->price)  }}--}}
@@ -380,16 +382,15 @@
 
                                                    </div>
                                                </div>
-
-                                               <div class="row">
-                                                   <div class="col-8 text-start">
-                                                       <div class="featured-product-price text-start fs-6">
+                                               <div class="col-12 text-center">
+                                                       <div class="featured-product-price text-center fs-6">
                                                            <i class="{{ session()->get('currency')?session()->get('currency')['value']:'' }}"></i>
                                                            {{ $product->offer_price != 0 && $product->offer_price != '' ? price_format($product->offer_price) :  price_format($product->price)  }}
                                                            {{--                                                        <del class="text-danger h12">{{ $product->offer_price != 0 && $product->offer_price != '' ? price_format($product->price) :  ''  }}</del>--}}
                                                        </div>
                                                    </div>
-                                                   <div class="col-4 text-end">
+                                               <div class="row">
+                                                   <div class="col-12 text-center featured_custom_cart">
                                                        <form method="POST"
                                                              action="{{ $product->type == 'ex_product' ? $product->external_product_link : route('add.cart.simple',['pro_id' => $product->id, 'price' => $product->price, 'offerprice' => $product->offer_price]) }}"
                                                              class="addSimpleCardFrom{{$product->id}}">
@@ -404,7 +405,7 @@
                                                               onclick="addSimpleProCard({{$product->id}})"
                                                               data-bs-toggle="tooltip" data-bs-placement="left"
                                                               data-bs-title="{{__('Add To Cart')}}"><i
-                                                                       data-feather="shopping-cart"></i></a>
+                                                                       data-feather="shopping-cart"></i> Add To Cart</a>
 
                                                        </form>
                                                    </div>
