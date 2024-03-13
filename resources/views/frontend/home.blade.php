@@ -665,36 +665,43 @@
                                                                     </p>
                                                                 </div>
                                                             </div>
-                                                            <div class="row">
-                                                                <div class="col-md-8  text-start">
-                                                                    <div class="featured-product-price text-start fs-6 ">
-                                                                        <i class="{{ session()->get('currency')?session()->get('currency')['value']:'' }}"></i>
-                                                                        {{ $featured_pro->offer_price != 0 && $featured_pro->offer_price != '' ? price_format($featured_pro->offer_price) :  price_format($featured_pro->price)  }}
-                                                                    </div>
 
-                                                                </div>
-                                                                <div class="col-md-4 text-end ">
-                                                                    <form method="POST"
-                                                                          action="{{ $featured_pro->type == 'ex_product' ? $featured_pro->external_product_link : route('add.cart.simple',['pro_id' => $featured_pro->id, 'price' => $featured_pro->price, 'offerprice' => $featured_pro->offer_price]) }}"
-                                                                          class="addSimpleCardFrom{{$featured_pro->id}}">
-                                                                        @csrf
 
-                                                                        <input name="qty" type="hidden"
-                                                                               value="{{ $featured_pro->min_order_qty }}"
-                                                                               max="{{ $featured_pro->max_order_qty }}"
-                                                                               class="qty-section">
 
-                                                                        <a href="javascript:"
-                                                                           onclick="addSimpleProCard({{$featured_pro->id}})"
-                                                                           data-bs-toggle="tooltip"
-                                                                           data-bs-placement="left"
-                                                                           data-bs-title="{{__('Add To Cart')}}"><i
-                                                                                    data-feather="shopping-cart"></i></a>
+                                                         <!-- -------------------- Change Mizan--------------------- -->
 
-                                                                    </form>
+                                                         <div class="col-md-12  text-center">
+                                                                <div class="featured-product-price text-center fs-6 ">
+                                                                    <i class="{{ session()->get('currency')?session()->get('currency')['value']:'' }}"></i>
+                                                                   <!-- <s>{{ $featured_pro->price != 0 && $featured_pro->price != '' ? price_format($featured_pro->price) :  price_format($featured_pro->price)  }}</s>  -->
+                                                                   {{ $featured_pro->offer_price != 0 && $featured_pro->offer_price != '' ? price_format($featured_pro->offer_price) :  price_format($featured_pro->price)  }}
                                                                 </div>
                                                             </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 text-center featured_custom_cart">
+                                                                <form method="POST"
+                                                                      action="{{ $featured_pro->type == 'ex_product' ? $featured_pro->external_product_link : route('add.cart.simple',['pro_id' => $featured_pro->id, 'price' => $featured_pro->price, 'offerprice' => $featured_pro->offer_price]) }}"
+                                                                      class="addSimpleCardFrom{{$featured_pro->id}}">
+                                                                    @csrf
+
+                                                                    <input name="qty" type="hidden"
+                                                                           value="{{ $featured_pro->min_order_qty }}"
+                                                                           max="{{ $featured_pro->max_order_qty }}"
+                                                                           class="qty-section">
+
+                                                                    <a href="javascript:"
+                                                                       onclick="addSimpleProCard({{$featured_pro->id}})"
+                                                                       data-bs-toggle="tooltip" data-bs-placement="left"
+                                                                       data-bs-title="{{__('Add To Cart')}}"><i
+                                                                                data-feather="shopping-cart"></i> Add to Cart </a>
+
+                                                                </form>
+                                                            </div>
                                                         </div>
+                        <!-- -------------------- Change Mizan--------------------- -->
+
+
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -755,6 +762,7 @@
                                                 @endif
                                             </div>
                                         </div>
+
                                         <div class="featured-product-dtl">
                                             <div class="row">
                                                 <div class="col-12">
@@ -777,41 +785,49 @@
 
 
                                             </div>
-                                            <div class="row">
-                                                <div class="col-12 text-center featured_custom_cart">
+                                            
+                                        <div class="col-12  text-center">
+                                               
+                                               <div class="featured-product-price text-center fs-6 ">
+                                                   <i class="{{ session()->get('currency')?session()->get('currency')['value']:'' }}"></i>
+                                                   {{ $featured_pro->offer_price != 0 && $featured_pro->offer_price != '' ? price_format($featured_pro->offer_price) :  price_format($featured_pro->price)  }}
+                                               </div>
+                                             
 
-                                                    <form method="POST"
-                                                          action="{{ $featured_pro->type == 'ex_product' ? $featured_pro->external_product_link : route('add.cart.simple',['pro_id' => $featured_pro->id, 'price' => $featured_pro->price, 'offerprice' => $featured_pro->offer_price]) }}"
-                                                          class="addSimpleCardFrom{{$featured_pro->id}}">
-                                                        @csrf
+                                           </div>
+                                        <div class="row">
+                                            <div class="col-12 text-center featured_custom_cart">
+                                               
+                                                <form method="POST"
+                                                      action="{{ $featured_pro->type == 'ex_product' ? $featured_pro->external_product_link : route('add.cart.simple',['pro_id' => $featured_pro->id, 'price' => $featured_pro->price, 'offerprice' => $featured_pro->offer_price]) }}"
+                                                      class="addSimpleCardFrom{{$featured_pro->id}}">
+                                                    @csrf
 
-                                                        <input name="qty" type="hidden"
-                                                               value="{{ $featured_pro->min_order_qty }}"
-                                                               max="{{ $featured_pro->max_order_qty }}"
-                                                               class="qty-section">
+                                                    <input name="qty" type="hidden"
+                                                           value="{{ $featured_pro->min_order_qty }}"
+                                                           max="{{ $featured_pro->max_order_qty }}"
+                                                           class="qty-section">
 
-                                                        <a href="javascript:"
-                                                           onclick="addSimpleProCard({{$featured_pro->id}})"
-                                                           data-bs-toggle="tooltip" data-bs-placement="left"
-                                                           data-bs-title="{{__('Add To Cart')}}"><i
-                                                                    data-feather="shopping-cart"></i></a>
+                                                    <a href="javascript:"
+                                                       onclick="addSimpleProCard({{$featured_pro->id}})"
+                                                       data-bs-toggle="tooltip" data-bs-placement="left"
+                                                       data-bs-title="{{__('Add To Cart')}}"><i
+                                                                data-feather="shopping-cart"></i>Add To Cart</a>
 
-                                                    </form>
+                                                </form>
 
-                                                </div>
-                                                {{--                                                    </div>--}}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                {{--                            @endif--}}
-                            @endforeach
-                        @else
-                            @php
-                                $conversion_rate = 1;
-                            @endphp
-                        @endif
-                    </div>
+
+                            </div>
+                        @endforeach
+                    @else
+                        @php
+                            $conversion_rate = 1;
+                        @endphp
+                    @endif
                 </div>
             </section>
             <!-- BCS Books End -->
@@ -997,36 +1013,41 @@
                                                                     </p>
                                                                 </div>
                                                             </div>
-                                                            <div class="row">
-                                                                <div class="col-md-8  text-start">
-                                                                    <div class="featured-product-price text-start fs-6 ">
-                                                                        <i class="{{ session()->get('currency')?session()->get('currency')['value']:'' }}"></i>
-                                                                        {{ $featured_pro->offer_price != 0 && $featured_pro->offer_price != '' ? price_format($featured_pro->offer_price) :  price_format($featured_pro->price)  }}
-                                                                    </div>
+                                                           
 
-                                                                </div>
-                                                                <div class="col-md-4 text-end ">
-                                                                    <form method="POST"
-                                                                          action="{{ $featured_pro->type == 'ex_product' ? $featured_pro->external_product_link : route('add.cart.simple',['pro_id' => $featured_pro->id, 'price' => $featured_pro->price, 'offerprice' => $featured_pro->offer_price]) }}"
-                                                                          class="addSimpleCardFrom{{$featured_pro->id}}">
-                                                                        @csrf
+                        <!-- -------------------- Change Mizan--------------------- -->
 
-                                                                        <input name="qty" type="hidden"
-                                                                               value="{{ $featured_pro->min_order_qty }}"
-                                                                               max="{{ $featured_pro->max_order_qty }}"
-                                                                               class="qty-section">
-
-                                                                        <a href="javascript:"
-                                                                           onclick="addSimpleProCard({{$featured_pro->id}})"
-                                                                           data-bs-toggle="tooltip"
-                                                                           data-bs-placement="left"
-                                                                           data-bs-title="{{__('Add To Cart')}}"><i
-                                                                                    data-feather="shopping-cart"></i></a>
-
-                                                                    </form>
+                                                            <div class="col-md-12  text-center">
+                                                                <div class="featured-product-price text-center fs-6 ">
+                                                                    <i class="{{ session()->get('currency')?session()->get('currency')['value']:'' }}"></i>
+                                                                   <!-- <s>{{ $featured_pro->price != 0 && $featured_pro->price != '' ? price_format($featured_pro->price) :  price_format($featured_pro->price)  }}</s>  -->
+                                                                   {{ $featured_pro->offer_price != 0 && $featured_pro->offer_price != '' ? price_format($featured_pro->offer_price) :  price_format($featured_pro->price)  }}
                                                                 </div>
                                                             </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 text-center featured_custom_cart">
+                                                                <form method="POST"
+                                                                      action="{{ $featured_pro->type == 'ex_product' ? $featured_pro->external_product_link : route('add.cart.simple',['pro_id' => $featured_pro->id, 'price' => $featured_pro->price, 'offerprice' => $featured_pro->offer_price]) }}"
+                                                                      class="addSimpleCardFrom{{$featured_pro->id}}">
+                                                                    @csrf
+
+                                                                    <input name="qty" type="hidden"
+                                                                           value="{{ $featured_pro->min_order_qty }}"
+                                                                           max="{{ $featured_pro->max_order_qty }}"
+                                                                           class="qty-section">
+
+                                                                    <a href="javascript:"
+                                                                       onclick="addSimpleProCard({{$featured_pro->id}})"
+                                                                       data-bs-toggle="tooltip" data-bs-placement="left"
+                                                                       data-bs-title="{{__('Add To Cart')}}"> Add to Cart <i
+                                                                                data-feather="shopping-cart"></i></a>
+
+                                                                </form>
+                                                            </div>
                                                         </div>
+                        <!-- -------------------- Change Mizan--------------------- -->
+
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -1209,36 +1230,42 @@
                                                                     </p>
                                                                 </div>
                                                             </div>
-                                                            <div class="row">
-                                                                <div class="col-md-8  text-start">
-                                                                    <div class="featured-product-price text-start fs-6 ">
-                                                                        <i class="{{ session()->get('currency')?session()->get('currency')['value']:'' }}"></i>
-                                                                        {{ $featured_pro->offer_price != 0 && $featured_pro->offer_price != '' ? price_format($featured_pro->offer_price) :  price_format($featured_pro->price)  }}
-                                                                    </div>
+                                                          
 
-                                                                </div>
-                                                                <div class="col-md-4 text-end ">
-                                                                    <form method="POST"
-                                                                          action="{{ $featured_pro->type == 'ex_product' ? $featured_pro->external_product_link : route('add.cart.simple',['pro_id' => $featured_pro->id, 'price' => $featured_pro->price, 'offerprice' => $featured_pro->offer_price]) }}"
-                                                                          class="addSimpleCardFrom{{$featured_pro->id}}">
-                                                                        @csrf
 
-                                                                        <input name="qty" type="hidden"
-                                                                               value="{{ $featured_pro->min_order_qty }}"
-                                                                               max="{{ $featured_pro->max_order_qty }}"
-                                                                               class="qty-section">
 
-                                                                        <a href="javascript:"
-                                                                           onclick="addSimpleProCard({{$featured_pro->id}})"
-                                                                           data-bs-toggle="tooltip"
-                                                                           data-bs-placement="left"
-                                                                           data-bs-title="{{__('Add To Cart')}}"><i
-                                                                                    data-feather="shopping-cart"></i></a>
+                                                         <!-- -------------------- Change Mizan--------------------- -->
 
-                                                                    </form>
+                                                            <div class="col-md-12  text-center">
+                                                                <div class="featured-product-price text-center fs-6 ">
+                                                                    <i class="{{ session()->get('currency')?session()->get('currency')['value']:'' }}"></i>
+                                                                   <!-- <s>{{ $featured_pro->price != 0 && $featured_pro->price != '' ? price_format($featured_pro->price) :  price_format($featured_pro->price)  }}</s>  -->
+                                                                   {{ $featured_pro->offer_price != 0 && $featured_pro->offer_price != '' ? price_format($featured_pro->offer_price) :  price_format($featured_pro->price)  }}
                                                                 </div>
                                                             </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 text-center featured_custom_cart">
+                                                                <form method="POST"
+                                                                      action="{{ $featured_pro->type == 'ex_product' ? $featured_pro->external_product_link : route('add.cart.simple',['pro_id' => $featured_pro->id, 'price' => $featured_pro->price, 'offerprice' => $featured_pro->offer_price]) }}"
+                                                                      class="addSimpleCardFrom{{$featured_pro->id}}">
+                                                                    @csrf
+
+                                                                    <input name="qty" type="hidden"
+                                                                           value="{{ $featured_pro->min_order_qty }}"
+                                                                           max="{{ $featured_pro->max_order_qty }}"
+                                                                           class="qty-section">
+
+                                                                    <a href="javascript:"
+                                                                       onclick="addSimpleProCard({{$featured_pro->id}})"
+                                                                       data-bs-toggle="tooltip" data-bs-placement="left"
+                                                                       data-bs-title="{{__('Add To Cart')}}"> Add to Cart <i
+                                                                                data-feather="shopping-cart"></i></a>
+
+                                                                </form>
+                                                            </div>
                                                         </div>
+                        <!-- -------------------- Change Mizan--------------------- -->
+
                                                     </div>
                                                 </div>
                                             </div>
