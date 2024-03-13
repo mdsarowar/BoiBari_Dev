@@ -644,15 +644,19 @@
                                                                 </p>
                                                             </div>
                                                         </div>
-                                                        <div class="row">
-                                                            <div class="col-md-8  text-start">
-                                                                <div class="featured-product-price text-start fs-6 ">
-                                                                    <i class="{{ session()->get('currency')?session()->get('currency')['value']:'' }}"></i>
-                                                                    {{ $featured_pro->offer_price != 0 && $featured_pro->offer_price != '' ? price_format($featured_pro->offer_price) :  price_format($featured_pro->price)  }}
-                                                                </div>
 
+
+                                                         <!-- -------------------- Change Mizan--------------------- -->
+
+                                                         <div class="col-md-12  text-center">
+                                                                <div class="featured-product-price text-center fs-6 ">
+                                                                    <i class="{{ session()->get('currency')?session()->get('currency')['value']:'' }}"></i>
+                                                                   <!-- <s>{{ $featured_pro->price != 0 && $featured_pro->price != '' ? price_format($featured_pro->price) :  price_format($featured_pro->price)  }}</s>  -->
+                                                                   {{ $featured_pro->offer_price != 0 && $featured_pro->offer_price != '' ? price_format($featured_pro->offer_price) :  price_format($featured_pro->price)  }}
+                                                                </div>
                                                             </div>
-                                                            <div class="col-md-4 text-end ">
+                                                        <div class="row">
+                                                            <div class="col-md-12 text-center featured_custom_cart">
                                                                 <form method="POST"
                                                                       action="{{ $featured_pro->type == 'ex_product' ? $featured_pro->external_product_link : route('add.cart.simple',['pro_id' => $featured_pro->id, 'price' => $featured_pro->price, 'offerprice' => $featured_pro->offer_price]) }}"
                                                                       class="addSimpleCardFrom{{$featured_pro->id}}">
@@ -667,11 +671,15 @@
                                                                        onclick="addSimpleProCard({{$featured_pro->id}})"
                                                                        data-bs-toggle="tooltip" data-bs-placement="left"
                                                                        data-bs-title="{{__('Add To Cart')}}"><i
-                                                                                data-feather="shopping-cart"></i></a>
+                                                                                data-feather="shopping-cart"></i> Add to Cart </a>
 
                                                                 </form>
                                                             </div>
                                                         </div>
+                        <!-- -------------------- Change Mizan--------------------- -->
+
+
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -770,17 +778,15 @@
                                                        onclick="addSimpleProCard({{$featured_pro->id}})"
                                                        data-bs-toggle="tooltip" data-bs-placement="left"
                                                        data-bs-title="{{__('Add To Cart')}}"><i
-                                                                data-feather="shopping-cart"></i></a>
+                                                                data-feather="shopping-cart"></i>Add To Cart</a>
 
                                                 </form>
                                               
                                             </div>
-                                            {{--                                                    </div>--}}
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            {{--                            @endif--}}
                         @endforeach
                     @else
                         @php
@@ -965,15 +971,18 @@
                                                                 </p>
                                                             </div>
                                                         </div>
-                                                        <div class="row">
-                                                            <div class="col-md-8  text-start">
-                                                                <div class="featured-product-price text-start fs-6 ">
-                                                                    <i class="{{ session()->get('currency')?session()->get('currency')['value']:'' }}"></i>
-                                                                    {{ $featured_pro->offer_price != 0 && $featured_pro->offer_price != '' ? price_format($featured_pro->offer_price) :  price_format($featured_pro->price)  }}
-                                                                </div>
 
+                        <!-- -------------------- Change Mizan--------------------- -->
+
+                                                            <div class="col-md-12  text-center">
+                                                                <div class="featured-product-price text-center fs-6 ">
+                                                                    <i class="{{ session()->get('currency')?session()->get('currency')['value']:'' }}"></i>
+                                                                   <!-- <s>{{ $featured_pro->price != 0 && $featured_pro->price != '' ? price_format($featured_pro->price) :  price_format($featured_pro->price)  }}</s>  -->
+                                                                   {{ $featured_pro->offer_price != 0 && $featured_pro->offer_price != '' ? price_format($featured_pro->offer_price) :  price_format($featured_pro->price)  }}
+                                                                </div>
                                                             </div>
-                                                            <div class="col-md-4 text-end ">
+                                                        <div class="row">
+                                                            <div class="col-md-12 text-center featured_custom_cart">
                                                                 <form method="POST"
                                                                       action="{{ $featured_pro->type == 'ex_product' ? $featured_pro->external_product_link : route('add.cart.simple',['pro_id' => $featured_pro->id, 'price' => $featured_pro->price, 'offerprice' => $featured_pro->offer_price]) }}"
                                                                       class="addSimpleCardFrom{{$featured_pro->id}}">
@@ -987,12 +996,15 @@
                                                                     <a href="javascript:"
                                                                        onclick="addSimpleProCard({{$featured_pro->id}})"
                                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                                       data-bs-title="{{__('Add To Cart')}}"><i
+                                                                       data-bs-title="{{__('Add To Cart')}}"> Add to Cart <i
                                                                                 data-feather="shopping-cart"></i></a>
 
                                                                 </form>
                                                             </div>
                                                         </div>
+                        <!-- -------------------- Change Mizan--------------------- -->
+
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -1170,15 +1182,19 @@
                                                                 </p>
                                                             </div>
                                                         </div>
-                                                        <div class="row">
-                                                            <div class="col-md-8  text-start">
-                                                                <div class="featured-product-price text-start fs-6 ">
-                                                                    <i class="{{ session()->get('currency')?session()->get('currency')['value']:'' }}"></i>
-                                                                    {{ $featured_pro->offer_price != 0 && $featured_pro->offer_price != '' ? price_format($featured_pro->offer_price) :  price_format($featured_pro->price)  }}
-                                                                </div>
 
+
+                                                         <!-- -------------------- Change Mizan--------------------- -->
+
+                                                            <div class="col-md-12  text-center">
+                                                                <div class="featured-product-price text-center fs-6 ">
+                                                                    <i class="{{ session()->get('currency')?session()->get('currency')['value']:'' }}"></i>
+                                                                   <!-- <s>{{ $featured_pro->price != 0 && $featured_pro->price != '' ? price_format($featured_pro->price) :  price_format($featured_pro->price)  }}</s>  -->
+                                                                   {{ $featured_pro->offer_price != 0 && $featured_pro->offer_price != '' ? price_format($featured_pro->offer_price) :  price_format($featured_pro->price)  }}
+                                                                </div>
                                                             </div>
-                                                            <div class="col-md-4 text-end ">
+                                                        <div class="row">
+                                                            <div class="col-md-12 text-center featured_custom_cart">
                                                                 <form method="POST"
                                                                       action="{{ $featured_pro->type == 'ex_product' ? $featured_pro->external_product_link : route('add.cart.simple',['pro_id' => $featured_pro->id, 'price' => $featured_pro->price, 'offerprice' => $featured_pro->offer_price]) }}"
                                                                       class="addSimpleCardFrom{{$featured_pro->id}}">
@@ -1192,12 +1208,14 @@
                                                                     <a href="javascript:"
                                                                        onclick="addSimpleProCard({{$featured_pro->id}})"
                                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                                       data-bs-title="{{__('Add To Cart')}}"><i
+                                                                       data-bs-title="{{__('Add To Cart')}}"> Add to Cart <i
                                                                                 data-feather="shopping-cart"></i></a>
 
                                                                 </form>
                                                             </div>
                                                         </div>
+                        <!-- -------------------- Change Mizan--------------------- -->
+
                                                     </div>
                                                 </div>
                                             </div>
