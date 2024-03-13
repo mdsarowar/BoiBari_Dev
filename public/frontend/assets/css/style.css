@@ -54,6 +54,9 @@
 .featured_custom_cart:hover a{
     color: black;
 }
+/* .featured_custom_cart:hover a{
+    color: black;
+} */
 .featured-product-badge .badge {
     background-color: orangered!important;
     font-size: 13px;
