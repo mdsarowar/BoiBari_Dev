@@ -134,7 +134,7 @@ class ManualPaymentGatewayController extends Controller
 //        }
 
         $total = getcarttotal();
-
+//return $total;
         $total = sprintf("%.2f", $total * $conversion_rate);
 
         if ($request->actualtotal != $total) {

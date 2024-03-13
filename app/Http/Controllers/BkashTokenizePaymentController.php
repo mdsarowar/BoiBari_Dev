@@ -21,7 +21,7 @@ class BkashTokenizePaymentController extends Controller
 
     public function createPayment(Request $request)
     {
-
+//return $request;
         $inv = uniqid();
         $request['intent'] = 'sale';
         $request['mode'] = '0011'; //0011 for checkout
