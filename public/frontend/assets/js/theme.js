@@ -316,7 +316,7 @@ $("#featured-brand-slider").owlCarousel({
 /* ========== bcs-book-slider =========== */
 $("#bcs-book-slider").owlCarousel({
     loop: true,
-    items: 6,
+    items: 5,
     dots: false,
     nav: false,
     autoplayTimeout: 10000,
@@ -324,7 +324,7 @@ $("#bcs-book-slider").owlCarousel({
     autoHeight: false,
     touchDrag: true,
     mouseDrag: true,
-    margin: 10,
+    margin: 30,
     autoplay: true,
     lazyLoad:true,
     slideSpeed: 600,
@@ -351,12 +351,12 @@ $("#bcs-book-slider").owlCarousel({
             dots: false,
         },
         992: {
-            items: 6,
+            items: 5,
             nav: false,
             dots: false,
         },
         1000: {
-            items: 6,
+            items: 5,
             nav: false,
             dots: false,
         }
@@ -366,7 +366,7 @@ $("#bcs-book-slider").owlCarousel({
 /* ========== bank-book-slider =========== */
 $("#bank-book-slider").owlCarousel({
     loop: true,
-    items: 6,
+    items: 5,
     dots: false,
     nav: false,
     autoplayTimeout: 10000,
@@ -374,7 +374,7 @@ $("#bank-book-slider").owlCarousel({
     autoHeight: false,
     touchDrag: true,
     mouseDrag: true,
-    margin: 20,
+    margin: 30,
     autoplay: true,
     lazyLoad:true,
     slideSpeed: 600,
@@ -401,12 +401,12 @@ $("#bank-book-slider").owlCarousel({
             dots: false,
         },
         992: {
-            items: 6,
+            items: 5,
             nav: false,
             dots: false,
         },
         1000: {
-            items: 6,
+            items: 5,
             nav: false,
             dots: false,
         }
@@ -416,7 +416,7 @@ $("#bank-book-slider").owlCarousel({
 /* ========== academic-slider =========== */
 $("#academic-slider").owlCarousel({
     loop: true,
-    items: 6,
+    items: 5,
     dots: false,
     nav: false,
     autoplayTimeout: 10000,
@@ -424,7 +424,7 @@ $("#academic-slider").owlCarousel({
     autoHeight: false,
     touchDrag: true,
     mouseDrag: true,
-    margin: 20,
+    margin: 30,
     autoplay: true,
     lazyLoad:true,
     slideSpeed: 600,
@@ -451,12 +451,12 @@ $("#academic-slider").owlCarousel({
             dots: false,
         },
         992: {
-            items: 6,
+            items: 5,
             nav: false,
             dots: false,
         },
         1000: {
-            items: 6,
+            items: 5,
             nav: false,
             dots: false,
         }

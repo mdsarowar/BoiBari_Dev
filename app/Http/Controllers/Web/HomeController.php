@@ -75,45 +75,31 @@ class HomeController extends Controller
     {
         require base_path() . '/app/Http/Controllers/price.php';
         $genral = Genral::first();
-//        $topsell=SimpleProduct::where('status',1)->orderBy('qty','DESC')->paginate(10);
-//        return $topsell;
         $bcs=Category::where('title','{"en":"BCS"}')->first();
         $bank=Category::where('title','{"en":"Bank"}')->first();
         $academic=Category::where('title','{"en":"Academic"}')->first();
         $job=Category::where('title','{"en":"Job Preparation"}')->first();
-//        $job=Category::where('title','Job Preparation')->first();
-//        $job=Category::where('status','1')->first();
 
-        // if (isset($job)){
-        //     $job_sub = Subcategory::where('parent_cat',$job->id)->latest()->take(5)->get();
-        // }
-        // $job_1 = SimpleProduct::where('status','1')->where('subcategory_id', $job_sub[1]->id)->paginate(9);
-
-//        return $job_sub[0]->title;
-//        $tps=SimpleProduct::where('status','1')->where('subcategory_id',$job_sub[0]->id)->latest()->paginate(9);
-//        return $job_1;
+         if (isset($job)){
+             $job_sub = Subcategory::where('parent_cat',$job->id)->latest()->take(5)->get();
+         }
         if($genral && $genral->verify_status=='1'){
             $cat_infos = Category::where('status','1')->orderBy('position');
             $data['categories'] = $cat_infos->paginate(10);
             $data['bcs'] = $bcs;
             $data['bank'] = $bank;
             $data['academic'] = $academic;
-            // $data['jobsubs'] = $job_sub;
+             $data['jobsubs'] = $job_sub;
             $data['authors'] =Author::where('status','1')->latest()->paginate(8);
             $data['publishers'] =Publisher::where('status','1')->latest()->paginate(8);
             $data['top_categories'] = Category::where('status','1')->orderBy('id','DESC')->paginate(8);
             $data['top_selles'] = SimpleProduct::where('status',1)->orderBy('qty','DESC')->paginate(10);
             $data['latest_products'] = SimpleProduct::where('status','1')->orderBy('id','DESC')->paginate(9);
-            // if (isset($job_sub)){
-            //     $data['job_1'] = SimpleProduct::where('status','1')->where('subcategory_id',$job_sub[0]->id)->paginate(9);
-            //     $data['job_2'] = SimpleProduct::where('status','1')->where('subcategory_id',$job_sub[1]->id)->paginate(9);
-            //     $data['job_3'] = SimpleProduct::where('status','1')->where('subcategory_id',$job_sub[2]->id)->paginate(9);
-            // }
-
-
-
-//            $data['top_sellers'] = SimpleProduct::where('id',$orders->simple_pro_ids)->paginate(10);
-//            return $data['top_sellers'];
+             if (isset($job_sub)){
+                 $data['job_1'] = SimpleProduct::where('status','1')->where('subcategory_id',$job_sub[0]->id)->paginate(9);
+                 $data['job_2'] = SimpleProduct::where('status','1')->where('subcategory_id',$job_sub[1]->id)->paginate(9);
+                 $data['job_3'] = SimpleProduct::where('status','1')->where('subcategory_id',$job_sub[2]->id)->paginate(9);
+             }
             $data['featuredcategories'] = $cat_infos->where('featured','1')->paginate(8);
             $data['categories_tab'] = $cat_infos->paginate(5);
             $data['featured_category'] = Category::where('status','1')->where('featured','1')->paginate(4);
@@ -192,16 +178,6 @@ class HomeController extends Controller
              }
              else
              {
-                // \Artisan::call('migrate --path=/database/migrations/2023_10_04_142541_add_author_to_genrals_table.php');
-                // \Artisan::call('migrate --path=/database/migrations/2023_10_04_142024_add_author_to_blogs_table.php');
-                // \Artisan::call('migrate --path=/database/migrations/2023_10_04_142202_add_author_to_sliders_table.php');
-                
-                //  $message = $result['message'];
-                //  $setting = Genral::first();
-                //  $setting->verify_status = '0';
-                //  $setting->verify_message = $result['message'];
-         
-                //  $setting->save();
                  Session::flash('error', trans('flash.Failed to Validate'));
                  Session::put('vrfy_error', 'Failed to Validate');
                  return back();
