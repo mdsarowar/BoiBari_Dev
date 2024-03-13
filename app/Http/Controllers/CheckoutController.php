@@ -838,9 +838,9 @@ class CheckoutController extends Controller
             foreach ($cart_table as $key => $crt) {
                 if($crt->active_cart == 1){ 
                     if($crt->semi_total != 0){
-                        $ctotal += $crt->semi_total+$crt->shipping;
+                        $ctotal += $crt->semi_total + $crt->shipping - $crt->tax_amount;
                     }else{
-                        $ctotal += $crt->price_total+$crt->shipping;
+                        $ctotal += $crt->price_total + $crt->shipping - $crt->tax_amount;
                     }
                 }
             }
